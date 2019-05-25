@@ -198,7 +198,6 @@
     <Compile Include="Core\RecordInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Csv\RecordIndexer.cs" />
     <Compile Include="Engines\DelimitedFileEngine.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -297,9 +296,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\TypeHelper.cs" />
-    <Compile Include="Options\CsvOptions.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Helpers\ExHelper.cs">
       <SubType>Code</SubType>
     </Compile>
