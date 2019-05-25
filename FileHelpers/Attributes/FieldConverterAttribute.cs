@@ -1,7 +1,10 @@
 using System;
 using System.Reflection;
+using FileHelpers.Converters;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates the <see cref="ConverterKind"/> used for read/write operations.</summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">Complete attributes list</a> for more information and examples of each one.</remarks>

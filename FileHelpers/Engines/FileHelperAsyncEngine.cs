@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using FileHelpers.Core;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.Helpers;
 using FileHelpers.Streams;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Async engine,  reads records from file in background,

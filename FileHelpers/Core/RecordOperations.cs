@@ -3,9 +3,11 @@ using System.Collections;
 using System.Data;
 using System.Reflection;
 using System.Text;
-using FileHelpers.Helpers;
+using FileHelpers.Engines;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Collection of operations that we perform on a type, cached for reuse
@@ -57,7 +59,7 @@ namespace FileHelpers
                             mRecordInfo.Fields[i].FieldInfo.Name,
                             line.mReader.LineNumber,
                             -1,
-                            Messages.Errors.WrongConverter
+                            Messages.Messages.Errors.WrongConverter
                                 .FieldName(mRecordInfo.Fields[i].FieldInfo.Name)
                                 .ConverterReturnedType(values[i].GetType().Name)
                                 .FieldType(mRecordInfo.Fields[i].FieldInfo.FieldType.Name)
@@ -100,7 +102,7 @@ namespace FileHelpers
                             mRecordInfo.Fields[i].FieldInfo.Name,
                             line.mReader.LineNumber,
                             -1,
-                            Messages.Errors.WrongConverter
+                            Messages.Messages.Errors.WrongConverter
                                 .FieldName(mRecordInfo.Fields[i].FieldInfo.Name)
                                 .ConverterReturnedType(values[i].GetType().Name)
                                 .FieldType(mRecordInfo.Fields[i].FieldInfo.FieldType.Name)

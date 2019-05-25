@@ -1,8 +1,10 @@
 using System;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using FileHelpers.Enums;
+using FileHelpers.Fields;
 
-namespace FileHelpers
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Record information,  whether it is delimited or other details

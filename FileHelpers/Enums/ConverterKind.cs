@@ -1,7 +1,7 @@
-namespace FileHelpers
+namespace FileHelpers.Enums
 {
     /// <summary>
-    /// Indicates the Conversion used in the <see cref="T:FileHelpers.FieldConverterAttribute"/>.
+    /// Indicates the Conversion used in the <see cref="T:FileHelpers.Attributes.FieldConverterAttribute"/>.
     /// </summary>
     public enum ConverterKind
     {

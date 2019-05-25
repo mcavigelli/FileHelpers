@@ -1,6 +1,7 @@
 using System;
+using FileHelpers.Enums;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates the <see cref="AlignMode"/> used for <b>write</b> operations.</summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">complete attributes list</a> for more information and examples of each one.</remarks>

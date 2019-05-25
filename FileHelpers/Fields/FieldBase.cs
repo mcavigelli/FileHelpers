@@ -4,10 +4,15 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
-using FileHelpers.Helpers;
+using FileHelpers.Attributes;
+using FileHelpers.Converters;
+using FileHelpers.Core;
+using FileHelpers.Engines;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Options;
 
-namespace FileHelpers
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// Base class for all Field Types.
@@ -254,7 +259,7 @@ namespace FileHelpers
                     }
 
                     var attbFixedLength = (FieldFixedLengthAttribute)fieldAttb;
-                    var attbAlign = Attributes.GetFirst<FieldAlignAttribute>(mi);
+                    var attbAlign = Helpers.Attributes.GetFirst<FieldAlignAttribute>(mi);
 
                     res = new FixedLengthField(fi,
                         attbFixedLength.Length,
@@ -300,7 +305,7 @@ namespace FileHelpers
                 res.Discarded = mi.IsDefined(typeof(FieldValueDiscardedAttribute), false);
 
                 // FieldTrim
-                Attributes.WorkWithFirst<FieldTrimAttribute>(mi,
+                Helpers.Attributes.WorkWithFirst<FieldTrimAttribute>(mi,
                     (x) =>
                     {
                         res.TrimMode = x.TrimMode;
@@ -308,7 +313,7 @@ namespace FileHelpers
                     });
 
                 // FieldQuoted
-                Attributes.WorkWithFirst<FieldQuotedAttribute>(mi,
+                Helpers.Attributes.WorkWithFirst<FieldQuotedAttribute>(mi,
                     (x) =>
                     {
                         if (res is FixedLengthField)
@@ -327,10 +332,10 @@ namespace FileHelpers
                     });
 
                 // FieldOrder
-                Attributes.WorkWithFirst<FieldOrderAttribute>(mi, x => res.FieldOrder = x.Order);
+                Helpers.Attributes.WorkWithFirst<FieldOrderAttribute>(mi, x => res.FieldOrder = x.Order);
 
                 // FieldCaption
-                Attributes.WorkWithFirst<FieldCaptionAttribute>(mi, x => res.FieldCaption = x.Caption);
+                Helpers.Attributes.WorkWithFirst<FieldCaptionAttribute>(mi, x => res.FieldCaption = x.Caption);
 
                 // FieldOptional
                 res.IsOptional = mi.IsDefined(typeof(FieldOptionalAttribute), false);
@@ -351,7 +356,7 @@ namespace FileHelpers
                     res.ArrayMinLength = int.MinValue;
                     res.ArrayMaxLength = int.MaxValue;
 
-                    Attributes.WorkWithFirst<FieldArrayLengthAttribute>(mi,
+                    Helpers.Attributes.WorkWithFirst<FieldArrayLengthAttribute>(mi,
                         (x) =>
                         {
                             res.ArrayMinLength = x.MinLength;

@@ -1,6 +1,6 @@
 using System;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>
     /// Allows you to set the length or bounds that the target array field must have.

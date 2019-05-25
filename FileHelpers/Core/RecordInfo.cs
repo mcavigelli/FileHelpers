@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
-using FileHelpers.Events;
-using FileHelpers.Helpers;
+using FileHelpers.Attributes;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
+using FileHelpers.Fields;
+using FileHelpers.Interfaces;
 
-namespace FileHelpers
+namespace FileHelpers.Core
 {
     /// <summary>An internal class used to store information about the Record Type.</summary>
     internal sealed partial class RecordInfo
@@ -133,29 +136,29 @@ namespace FileHelpers
         /// </summary>
         private void InitRecordFields()
         {
-            var recordAttribute = Attributes.GetFirstInherited<TypedRecordAttribute>(RecordType);
+            var recordAttribute = Helpers.Attributes.GetFirstInherited<TypedRecordAttribute>(RecordType);
 
             if (recordAttribute == null) {
-                throw new BadUsageException(Messages.Errors.ClassWithOutRecordAttribute
+                throw new BadUsageException(Messages.Messages.Errors.ClassWithOutRecordAttribute
                     .ClassName(RecordType.Name)
                     .Text);
             }
 
             if (ReflectionHelper.GetDefaultConstructor(RecordType) == null) {
-                throw new BadUsageException(Messages.Errors.ClassWithOutDefaultConstructor
+                throw new BadUsageException(Messages.Messages.Errors.ClassWithOutDefaultConstructor
                     .ClassName(RecordType.Name)
                     .Text);
             }
 
-            Attributes.WorkWithFirst<IgnoreFirstAttribute>(
+            Helpers.Attributes.WorkWithFirst<IgnoreFirstAttribute>(
                 RecordType,
                 a => IgnoreFirst = a.NumberOfLines);
 
-            Attributes.WorkWithFirst<IgnoreLastAttribute>(
+            Helpers.Attributes.WorkWithFirst<IgnoreLastAttribute>(
                 RecordType,
                 a => IgnoreLast = a.NumberOfLines);
 
-            Attributes.WorkWithFirst<IgnoreEmptyLinesAttribute>(
+            Helpers.Attributes.WorkWithFirst<IgnoreEmptyLinesAttribute>(
                 RecordType,
                 a => {
                     IgnoreEmptyLines = true;
@@ -163,7 +166,7 @@ namespace FileHelpers
                 });
 
 #pragma warning disable CS0618 // Type or member is obsolete
-            Attributes.WorkWithFirst<IgnoreCommentedLinesAttribute>(
+            Helpers.Attributes.WorkWithFirst<IgnoreCommentedLinesAttribute>(
 #pragma warning restore CS0618 // Type or member is obsolete
                 RecordType,
                 a => {
@@ -172,7 +175,7 @@ namespace FileHelpers
                     CommentAnyPlace = a.AnyPlace;
                 });
 
-            Attributes.WorkWithFirst<ConditionalRecordAttribute>(
+            Helpers.Attributes.WorkWithFirst<ConditionalRecordAttribute>(
                 RecordType,
                 a => {
                     RecordCondition = a.Condition;
@@ -199,7 +202,7 @@ namespace FileHelpers
             Fields = CreateCoreFields(fields, recordAttribute);
 
             if (FieldCount == 0) {
-                throw new BadUsageException(Messages.Errors.ClassWithOutFields
+                throw new BadUsageException(Messages.Messages.Errors.ClassWithOutFields
                     .ClassName(RecordType.Name)
                     .Text);
             }
@@ -251,7 +254,7 @@ namespace FileHelpers
 
             if (automaticFields > 0 &&
                 genericFields > 0 && SumOrder(resFields) == 0) {
-                throw new BadUsageException(Messages.Errors.MixOfStandardAndAutoPropertiesFields
+                throw new BadUsageException(Messages.Messages.Errors.MixOfStandardAndAutoPropertiesFields
                     .ClassName(resFields[0].FieldInfo.DeclaringType.Name)
                     .Text);
             }
@@ -296,7 +299,7 @@ namespace FileHelpers
                     currentField.IsOptional == false
                     &&
                     currentField.InNewLine == false) {
-                    throw new BadUsageException(Messages.Errors.ExpectingFieldOptional
+                    throw new BadUsageException(Messages.Messages.Errors.ExpectingFieldOptional
                         .FieldName(prevField.FieldInfo.Name)
                         .Text);
                 }
@@ -304,13 +307,13 @@ namespace FileHelpers
                 // Check for an array array in the middle of a record that is not a fixed length
                 if (prevField.IsArray) {
                     if (prevField.ArrayMinLength == Int32.MinValue) {
-                        throw new BadUsageException(Messages.Errors.MissingFieldArrayLenghtInNotLastField
+                        throw new BadUsageException(Messages.Messages.Errors.MissingFieldArrayLenghtInNotLastField
                             .FieldName(prevField.FieldInfo.Name)
                             .Text);
                     }
 
                     if (prevField.ArrayMinLength != prevField.ArrayMaxLength) {
-                        throw new BadUsageException(Messages.Errors.SameMinMaxLengthForArrayNotLastField
+                        throw new BadUsageException(Messages.Messages.Errors.SameMinMaxLengthForArrayNotLastField
                             .FieldName(prevField.FieldInfo.Name)
                             .Text);
                     }
@@ -339,7 +342,7 @@ namespace FileHelpers
                 // If one field has order number set, all others must also have an order number
                 var fieldWithoutOrder = resFields.Find(x => x.FieldOrder.HasValue == false);
                 if (fieldWithoutOrder != null) {
-                    throw new BadUsageException(Messages.Errors.PartialFieldOrder
+                    throw new BadUsageException(Messages.Messages.Errors.PartialFieldOrder
                         .FieldName(fieldWithoutOrder.FieldInfo.Name)
                         .Text);
                 }
@@ -350,7 +353,7 @@ namespace FileHelpers
 
                 if (fieldWithSameOrder != null)
                 {
-                    throw new BadUsageException(Messages.Errors.SameFieldOrder
+                    throw new BadUsageException(Messages.Messages.Errors.SameFieldOrder
                         .FieldName1(currentField.FieldInfo.Name)
                         .FieldName2(fieldWithSameOrder.FieldInfo.Name)
                         .Text);
@@ -364,11 +367,11 @@ namespace FileHelpers
                     var autoPropertyName = FieldBase.AutoPropertyName(currentField.FieldInfo);
 
                     if (string.IsNullOrEmpty(autoPropertyName))
-                        throw new BadUsageException(Messages.Errors.PartialFieldOrder
+                        throw new BadUsageException(Messages.Messages.Errors.PartialFieldOrder
                             .FieldName(currentField.FieldInfo.Name)
                             .Text);
                     else
-                        throw new BadUsageException(Messages.Errors.PartialFieldOrderInAutoProperty
+                        throw new BadUsageException(Messages.Messages.Errors.PartialFieldOrderInAutoProperty
                             .PropertyName(autoPropertyName)
                             .Text);
                 }
@@ -399,7 +402,7 @@ namespace FileHelpers
 
             int res;
             if (!mMapFieldIndex.TryGetValue(fieldName, out res)) {
-                throw new BadUsageException(Messages.Errors.FieldNotFound
+                throw new BadUsageException(Messages.Messages.Errors.FieldNotFound
                     .FieldName(fieldName)
                     .ClassName(RecordType.Name)
                     .Text);

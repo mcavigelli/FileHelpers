@@ -1,6 +1,8 @@
 using System;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>
     /// Indicates that the field must be read and written as a Quoted String. 

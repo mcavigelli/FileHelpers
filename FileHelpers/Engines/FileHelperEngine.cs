@@ -6,13 +6,15 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using FileHelpers.Core;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.Helpers;
 using FileHelpers.Streams;
 
 // Cannot remove Data easily
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Basic engine to read record by record

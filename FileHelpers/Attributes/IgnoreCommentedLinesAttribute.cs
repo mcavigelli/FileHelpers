@@ -1,6 +1,7 @@
 using System;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates that the engine must ignore commented lines while reading.</summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">complete attributes list</a> for more information and examples of each one.</remarks>

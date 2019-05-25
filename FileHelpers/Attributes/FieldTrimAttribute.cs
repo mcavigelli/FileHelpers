@@ -1,6 +1,8 @@
 using System;
+using FileHelpers.Core;
+using FileHelpers.Enums;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates the <see cref="TrimMode"/> used after reading to truncate the field. </summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">complete attributes list</a> for more information and examples of each one.</remarks>

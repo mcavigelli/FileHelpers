@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Engine used to create diff files based on the

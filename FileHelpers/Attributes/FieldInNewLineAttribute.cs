@@ -1,6 +1,6 @@
 using System;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>
     /// Indicates the target field has a new line before this value 

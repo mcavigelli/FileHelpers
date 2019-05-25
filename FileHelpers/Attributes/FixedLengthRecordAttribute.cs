@@ -1,6 +1,7 @@
 using System;
+using FileHelpers.Enums;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates that this class represents a fixed length record.</summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">complete attributes list</a> for more information and examples of each one.</remarks>
@@ -22,7 +23,7 @@ namespace FileHelpers
         /// Indicates that this class represents a fixed length record with the
         /// specified variable length record behavior.
         /// </summary>
-        /// <param name="fixedMode">The <see cref="FileHelpers.FixedMode"/> used for variable length records. By Default is FixedMode.ExactLength</param>
+        /// <param name="fixedMode">The <see cref="Enums.FixedMode"/> used for variable length records. By Default is FixedMode.ExactLength</param>
         /// <param name="defaultCultureName">Default culture name used for each properties if no converter is specified otherwise. If null, the default decimal separator (".") will be used.</param>
         public FixedLengthRecordAttribute(FixedMode fixedMode, string defaultCultureName = null) : base(defaultCultureName: defaultCultureName)
         {

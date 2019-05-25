@@ -1,9 +1,12 @@
 using System.Globalization;
 using System.Reflection;
 using System.Text;
-using FileHelpers.Helpers;
+using FileHelpers.Core;
+using FileHelpers.Engines;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// Define a field that is delimited, eg CSV and may be quoted

@@ -1,6 +1,6 @@
-﻿using FileHelpers.Helpers;
+﻿using FileHelpers.Engines;
 
-namespace FileHelpers
+namespace FileHelpers.Messages
 {
     internal class Messages
 {

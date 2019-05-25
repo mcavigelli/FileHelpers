@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Text;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Options;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Interface for The fileHelpers generic engine

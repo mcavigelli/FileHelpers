@@ -1,6 +1,6 @@
 using System;
 
-namespace FileHelpers
+namespace FileHelpers.Attributes
 {
     /// <summary>
     /// Indicates that the target field might be on the source file.

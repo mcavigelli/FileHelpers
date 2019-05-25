@@ -1,4 +1,6 @@
-﻿namespace FileHelpers.Events
+﻿using FileHelpers.Events;
+
+namespace FileHelpers.Interfaces
 {
     /// <summary>
     /// Interface used to provide In record notification of read operations.

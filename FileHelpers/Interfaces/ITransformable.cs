@@ -1,4 +1,4 @@
-namespace FileHelpers
+namespace FileHelpers.Interfaces
 {
     /// <summary>
     /// Interface used to provide record type transformations

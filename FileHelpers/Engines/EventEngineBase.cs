@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text;
+using FileHelpers.Core;
 using FileHelpers.Events;
+using FileHelpers.Interfaces;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Base for engine events

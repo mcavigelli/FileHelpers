@@ -1,4 +1,4 @@
-﻿namespace FileHelpers
+﻿namespace FileHelpers.Messages
 {
     /// <summary>
     /// Base class of all messages

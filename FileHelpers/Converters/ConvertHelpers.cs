@@ -2,16 +2,18 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using FileHelpers.Helpers;
+using FileHelpers.Attributes;
+using FileHelpers.Engines;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Converters
 {
     /// <summary>
     /// Class that provides static methods that returns a default 
     /// <see cref="ConverterBase">Converter</see> to the basic types.
     /// </summary>
     /// <remarks>
-    ///     Used by the <see cref="FileHelpers.FieldConverterAttribute"/>.
+    ///     Used by the <see cref="FieldConverterAttribute"/>.
     /// </remarks>
     internal static class ConvertHelpers
     {

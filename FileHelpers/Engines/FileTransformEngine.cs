@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Helpers;
+using FileHelpers.Interfaces;
 using FileHelpers.Streams;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// This class allow you to convert the records of a file to a different record format.

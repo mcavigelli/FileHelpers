@@ -1,8 +1,11 @@
 using System.Reflection;
 using System.Text;
-using FileHelpers.Helpers;
+using FileHelpers.Attributes;
+using FileHelpers.Core;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// Fixed length field that has length and alignment

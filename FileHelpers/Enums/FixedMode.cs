@@ -1,4 +1,6 @@
-namespace FileHelpers
+using FileHelpers.Attributes;
+
+namespace FileHelpers.Enums
 {
     /// <summary>
     /// Indicates the behavior when variable length records are found in a

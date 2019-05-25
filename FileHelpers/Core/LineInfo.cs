@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using FileHelpers.Helpers;
+using FileHelpers.Engines;
 
-namespace FileHelpers
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Record read from the file for processing

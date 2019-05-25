@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using FileHelpers.Core;
+using FileHelpers.Engines;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.Helpers;
 using FileHelpers.Options;
 
 namespace FileHelpers.MasterDetail
@@ -64,7 +67,7 @@ namespace FileHelpers.MasterDetail
             : base(detailType)
         {
             mMasterType = masterType;
-            mMasterInfo = FileHelpers.RecordInfo.Resolve(mMasterType);
+            mMasterInfo = Core.RecordInfo.Resolve(mMasterType);
             MasterOptions = CreateRecordOptionsCore(mMasterInfo);
             mRecordSelector = recordSelector;
         }
@@ -78,7 +81,7 @@ namespace FileHelpers.MasterDetail
             : base(detailType)
         {
             mMasterType = masterType;
-            mMasterInfo = FileHelpers.RecordInfo.Resolve(mMasterType);
+            mMasterInfo = Core.RecordInfo.Resolve(mMasterType);
             MasterOptions = CreateRecordOptionsCore(mMasterInfo);
 
             var sel = new MasterDetailEngine<object, object>.CommonSelectorInternal(action,

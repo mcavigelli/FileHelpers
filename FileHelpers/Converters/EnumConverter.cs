@@ -1,6 +1,7 @@
 using System;
+using FileHelpers.ErrorHandling;
 
-namespace FileHelpers
+namespace FileHelpers.Converters
 {
     internal sealed class EnumConverter : ConverterBase
     {

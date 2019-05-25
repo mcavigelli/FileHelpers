@@ -1,6 +1,6 @@
-namespace FileHelpers
+namespace FileHelpers.Enums
 {
-    /// <summary>Indicates the align of the field when the <see cref="T:FileHelpers.FileHelperEngine"/> <b>writes</b> the record.</summary>
+    /// <summary>Indicates the align of the field when the <see cref="T:FileHelpers.Engines.FileHelperEngine"/> <b>writes</b> the record.</summary>
     public enum AlignMode
     {
         /// <summary>Aligns the field to the left.</summary>

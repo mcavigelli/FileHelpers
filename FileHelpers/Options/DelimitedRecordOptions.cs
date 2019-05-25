@@ -1,3 +1,6 @@
+using FileHelpers.Core;
+using FileHelpers.Fields;
+
 namespace FileHelpers.Options
 {
     /// <summary>

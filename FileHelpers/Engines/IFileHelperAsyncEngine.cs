@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Options;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Interface for the FileHelper Async Engine

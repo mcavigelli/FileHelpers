@@ -1,4 +1,4 @@
-namespace FileHelpers
+namespace FileHelpers.Enums
 {
     /// <summary>Indicates the behavior of quoted fields.</summary>
     public enum QuoteMode

@@ -1,4 +1,4 @@
-namespace FileHelpers
+namespace FileHelpers.Enums
 {
     /// <summary>
     /// Indicates the trimming behavior of the leading and trailing whitespace.

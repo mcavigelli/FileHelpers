@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using FileHelpers.Helpers;
+using FileHelpers.Engines;
+using FileHelpers.Enums;
 
-namespace FileHelpers
+namespace FileHelpers.ErrorHandling
 {
     /// <summary>
     /// This is the class that handles the errors of the engines process.

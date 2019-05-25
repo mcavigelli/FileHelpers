@@ -1,4 +1,8 @@
 using System.Diagnostics;
+using FileHelpers.Attributes;
+using FileHelpers.Core;
+using FileHelpers.Enums;
+using FileHelpers.Fields;
 
 namespace FileHelpers.Options
 {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using FileHelpers.Attributes;
 
-namespace FileHelpers
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Create an object and assign

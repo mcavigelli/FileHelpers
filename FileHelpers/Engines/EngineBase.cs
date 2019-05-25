@@ -3,10 +3,13 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using FileHelpers.Core;
+using FileHelpers.Enums;
+using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Options;
 
-namespace FileHelpers
+namespace FileHelpers.Engines
 {
     /// <summary>Abstract Base class for the engines of the library: 
     /// <see cref="FileHelperEngine"/> and 
@@ -38,17 +41,17 @@ namespace FileHelpers
         internal EngineBase(Type recordType, Encoding encoding)
         {
             if (recordType == null)
-                throw new BadUsageException(Messages.Errors.NullRecordClass.Text);
+                throw new BadUsageException(Messages.Messages.Errors.NullRecordClass.Text);
 
             if (recordType.IsValueType)
             {
-                throw new BadUsageException(Messages.Errors.StructRecordClass
+                throw new BadUsageException(Messages.Messages.Errors.StructRecordClass
                     .RecordType(recordType.Name)
                     .Text);
             }
 
             mRecordType = recordType;
-            RecordInfo = FileHelpers.RecordInfo.Resolve(recordType);
+            RecordInfo = Core.RecordInfo.Resolve(recordType);
             mEncoding = encoding;
 
             CreateRecordOptions();
@@ -223,7 +226,7 @@ namespace FileHelpers
         ///   You can find complete information about the errors encountered while processing.
         ///   For example, you can get the errors, their number and save them to a file, etc.
         ///   </remarks>
-        ///   <seealso cref="FileHelpers.ErrorManager"/>
+        ///   <seealso cref="ErrorHandling.ErrorManager"/>
         public ErrorManager ErrorManager
         {
             get { return mErrorManager; }
@@ -231,7 +234,7 @@ namespace FileHelpers
 
         /// <summary>
         /// Indicates the behavior of the engine when it finds an error.
-        /// {Shortcut for <seealso cref="FileHelpers.ErrorManager.ErrorMode"/>)
+        /// {Shortcut for <seealso cref="ErrorHandling.ErrorManager.ErrorMode"/>)
         /// </summary>
         public ErrorMode ErrorMode
         {
