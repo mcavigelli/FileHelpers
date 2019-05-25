@@ -41,7 +41,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkProfile />
-	<CopyNuGetImplementations>false</CopyNuGetImplementations>
+    <CopyNuGetImplementations>false</CopyNuGetImplementations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\Debug\Bin\</OutputPath>
@@ -55,7 +55,8 @@
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
-    <NoWarn></NoWarn>
+    <NoWarn>
+    </NoWarn>
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
@@ -187,18 +188,6 @@
     <Compile Include="Core\IRecordReader.cs" />
     <Compile Include="Core\RecordOperations.cs" />
     <Compile Include="Core\ReflectionHelper.cs" />
-    <Compile Include="DataLink\Storage\DataBaseHelper.cs" />
-    <Compile Include="DataLink\ExcelStorageBase.cs" />
-    <Compile Include="DataLink\FileDataLink.cs" />
-    <Compile Include="DataLink\GenericDataLink.cs" />
-    <Compile Include="DataLink\Storage\AccessStorage.cs" />
-    <Compile Include="DataLink\Storage\DataBaseStorage.cs" />
-    <Compile Include="DataLink\Storage\DataStorage.cs" />
-    <Compile Include="DataLink\Storage\FileStorage.cs" />
-    <Compile Include="DataLink\Storage\GenericDatabaseStorage.cs" />
-    <Compile Include="DataLink\Storage\OleDbStorage.cs" />
-    <Compile Include="DataLink\Storage\SqlServerStorage.cs" />
-    <Compile Include="DataLink\TransactionMode.cs" />
     <Compile Include="Dynamic\AttributesBuilder.cs" />
     <Compile Include="Dynamic\ClassBuilder.cs" />
     <Compile Include="Dynamic\ConverterBuilder.cs" />
