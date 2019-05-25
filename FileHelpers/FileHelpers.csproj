@@ -286,18 +286,17 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\Attributes.cs" />
-    <Compile Include="Helpers\ConditionHelper.cs">
+    <Compile Include="Core\ConditionHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\TypeHelper.cs" />
+    <Compile Include="Fields\TypeHelper.cs" />
     <Compile Include="Helpers\ExHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\ValidIdentifierValidator.cs" />
-    <Compile Include="Helpers\StreamHelper.cs">
+    <Compile Include="Engines\StreamHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\StringHelper.cs">
+    <Compile Include="Engines\StringHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\INotifyRead.cs" />
