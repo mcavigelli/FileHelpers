@@ -10,6 +10,8 @@ using FileHelpers.Events;
 using FileHelpers.Helpers;
 using FileHelpers.Streams;
 
+// Cannot remove Data easily
+
 namespace FileHelpers
 {
     /// <summary>
