@@ -237,12 +237,6 @@
     <Compile Include="Enums\MultilineMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Enums\NetLanguage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Enums\NetVisibility.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Enums\QuoteMode.cs">
       <SubType>Code</SubType>
     </Compile>
