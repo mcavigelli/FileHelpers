@@ -304,18 +304,6 @@
     <Compile Include="Interfaces\INotifyWrite.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MasterDetail\Common.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MasterDetail\MasterDetailEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MasterDetail\MasterDetails.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MasterDetail\RecordAction.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Messages\GenerateMessages1.autogen.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
