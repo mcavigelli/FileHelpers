@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 using FileHelpers.Fields;
 using FileHelpers.Helpers;
 

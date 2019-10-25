@@ -3,7 +3,6 @@ using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.Enums;
-using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Fields
 {

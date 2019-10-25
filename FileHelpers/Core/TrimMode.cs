@@ -1,4 +1,8 @@
-namespace FileHelpers.Enums
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Indicates the trimming behavior of the leading and trailing whitespace.

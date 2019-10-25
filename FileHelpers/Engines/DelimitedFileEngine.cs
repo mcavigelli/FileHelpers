@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
-using FileHelpers.ErrorHandling;
+using FileHelpers.Core;
 using FileHelpers.Options;
 
 namespace FileHelpers.Engines

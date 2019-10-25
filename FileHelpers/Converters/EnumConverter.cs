@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using FileHelpers.Core;
 using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Converters

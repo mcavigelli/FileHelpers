@@ -1,7 +1,6 @@
 using System;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using FileHelpers.Enums;
 using FileHelpers.Fields;
 
 namespace FileHelpers.Core

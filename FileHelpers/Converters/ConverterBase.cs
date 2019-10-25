@@ -1,4 +1,5 @@
 using System;
+using FileHelpers.Core;
 using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Converters

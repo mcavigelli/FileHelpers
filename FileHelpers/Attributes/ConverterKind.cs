@@ -1,4 +1,8 @@
-namespace FileHelpers.Enums
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace FileHelpers.Attributes
 {
     /// <summary>
     /// Indicates the Conversion used in the <see cref="T:FileHelpers.Attributes.FieldConverterAttribute"/>.

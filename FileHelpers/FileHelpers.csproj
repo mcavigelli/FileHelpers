@@ -105,6 +105,7 @@
     <Compile Include="Attributes\ConditionalRecordAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Attributes\ConverterKind.cs" />
     <Compile Include="Attributes\FieldAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -172,10 +173,12 @@
     <Compile Include="Converters\ConvertHelpers.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Converters\EnumConverter.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Converters\EnumConverter.cs" />
+    <Compile Include="Core\BadUsageException.cs" />
     <Compile Include="Core\ExtensionsFileHelpers.cs" />
+    <Compile Include="Core\MultilineMode.cs" />
+    <Compile Include="Core\QuoteMode.cs" />
+    <Compile Include="Core\RecordCondition.cs" />
     <Compile Include="Core\RecordInfo.Factory.cs" />
     <Compile Include="Core\ExtractInfo.cs">
       <SubType>Code</SubType>
@@ -188,6 +191,7 @@
     <Compile Include="Core\IRecordReader.cs" />
     <Compile Include="Core\RecordOperations.cs" />
     <Compile Include="Core\ReflectionHelper.cs" />
+    <Compile Include="Core\TrimMode.cs" />
     <Compile Include="Engines\EventEngineBase.cs" />
     <Compile Include="Engines\IFileHelperAsyncEngine.cs" />
     <Compile Include="Engines\IFileHelperEngine.cs" />
@@ -225,28 +229,10 @@
     <Compile Include="Enums\AlignMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Enums\ConverterKind.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Enums\ErrorMode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enums\FixedMode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Enums\MultilineMode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Enums\QuoteMode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Enums\RecordCondition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Enums\TrimMode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ErrorHandling\BadUsageException.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ErrorHandling\ConvertException.cs">

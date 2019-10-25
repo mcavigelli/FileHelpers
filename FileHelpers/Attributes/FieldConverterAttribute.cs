@@ -1,8 +1,7 @@
 using System;
 using System.Reflection;
 using FileHelpers.Converters;
-using FileHelpers.Enums;
-using FileHelpers.ErrorHandling;
+using FileHelpers.Core;
 
 namespace FileHelpers.Attributes
 {

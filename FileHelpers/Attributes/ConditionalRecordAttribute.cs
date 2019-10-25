@@ -1,6 +1,5 @@
 using System;
-using FileHelpers.Enums;
-using FileHelpers.Helpers;
+using FileHelpers.Core;
 
 namespace FileHelpers.Attributes
 {
@@ -35,7 +34,13 @@ namespace FileHelpers.Attributes
         {
             Condition = condition;
             ConditionSelector = conditionSelector;
-            ExHelper.CheckNullOrEmpty(conditionSelector, "conditionSelector");
+            CheckNullOrEmpty(conditionSelector, "conditionSelector");
+        }
+
+        private static void CheckNullOrEmpty(string val, string paramName)
+        {
+            if (string.IsNullOrEmpty(val))
+                throw new ArgumentNullException(paramName, "Value can't be null or empty");
         }
     }
 }

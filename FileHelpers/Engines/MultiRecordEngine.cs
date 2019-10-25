@@ -8,7 +8,6 @@ using FileHelpers.Core;
 using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.MasterDetail;
 using FileHelpers.Options;
 using FileHelpers.Streams;
 

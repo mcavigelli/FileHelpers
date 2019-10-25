@@ -2,8 +2,8 @@ using System;
 using System.Diagnostics;
 using FileHelpers.Attributes;
 using FileHelpers.Converters;
+using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.Enums;
 
 namespace FileHelpers.ErrorHandling
 {

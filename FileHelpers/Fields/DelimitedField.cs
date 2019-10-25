@@ -3,7 +3,6 @@ using System.Reflection;
 using System.Text;
 using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Fields

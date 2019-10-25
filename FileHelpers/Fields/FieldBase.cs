@@ -8,7 +8,6 @@ using FileHelpers.Attributes;
 using FileHelpers.Converters;
 using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Options;
 

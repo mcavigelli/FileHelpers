@@ -1,6 +1,5 @@
 using System;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 
 namespace FileHelpers.Attributes
 {

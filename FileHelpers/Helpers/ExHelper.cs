@@ -7,17 +7,7 @@ namespace FileHelpers.Helpers
     /// </summary>
     internal static class ExHelper
     {
-        /// <summary>
-        /// Check the string is null or empty and throw an exception
-        /// </summary>
-        /// <param name="val">value to test</param>
-        /// <param name="paramName">name of parameter to check</param>
-        public static void CheckNullOrEmpty(string val, string paramName)
-        {
-            if (string.IsNullOrEmpty(val))
-                throw new ArgumentNullException(paramName, "Value can't be null or empty");
-        }
-
+        
         /// <summary>
         /// Check that parameter is not null or empty and throw an exception
         /// </summary>
