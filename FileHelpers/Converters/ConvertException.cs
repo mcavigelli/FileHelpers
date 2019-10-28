@@ -1,12 +1,14 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace FileHelpers.ErrorHandling
+namespace FileHelpers.Converters
 {
     /// <summary>
     /// Indicates that a string value can't be converted to a dest type.
     /// </summary>
     [Serializable]
-    public sealed class ConvertException : FileHelpersException
+    public sealed class ConvertException : Exception
     {
         #region "  Fields & Property  "
 

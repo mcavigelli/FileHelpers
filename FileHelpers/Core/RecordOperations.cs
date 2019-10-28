@@ -3,6 +3,8 @@ using System.Collections;
 using System.Data;
 using System.Reflection;
 using System.Text;
+using FileHelpers.Attributes;
+using FileHelpers.Converters;
 using FileHelpers.Engines;
 using FileHelpers.ErrorHandling;
 

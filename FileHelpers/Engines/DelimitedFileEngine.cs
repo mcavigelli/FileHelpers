@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.Options;
 

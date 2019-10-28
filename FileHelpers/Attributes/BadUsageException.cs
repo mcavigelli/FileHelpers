@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FileHelpers.ErrorHandling;
+using FileHelpers.Core;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Attributes
 {
     /// <summary>Indicates the wrong usage of the library.</summary>
     [Serializable]

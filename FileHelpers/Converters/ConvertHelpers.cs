@@ -3,9 +3,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using FileHelpers.Attributes;
-using FileHelpers.Core;
-using FileHelpers.Engines;
-using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Converters
 {
@@ -238,7 +235,7 @@ namespace FileHelpers.Converters
             protected override object ParseString(string from)
             {
                 byte res;
-                if (!byte.TryParse(StringHelper.RemoveBlanks(from), NumberStyles.Number, mCulture, out res))
+                if (!byte.TryParse(StringHelperAttributes.RemoveBlanks(from), NumberStyles.Number, mCulture, out res))
                     throw new ConvertException(from, mType);
                 return res;
             }
@@ -271,7 +268,7 @@ namespace FileHelpers.Converters
             {
                 ushort res;
                 if (
-                    !UInt16.TryParse(StringHelper.RemoveBlanks(from),
+                    !UInt16.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -307,7 +304,7 @@ namespace FileHelpers.Converters
             {
                 uint res;
                 if (
-                    !UInt32.TryParse(StringHelper.RemoveBlanks(from),
+                    !UInt32.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -343,7 +340,7 @@ namespace FileHelpers.Converters
             {
                 ulong res;
                 if (
-                    !UInt64.TryParse(StringHelper.RemoveBlanks(from),
+                    !UInt64.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -382,7 +379,7 @@ namespace FileHelpers.Converters
             protected override object ParseString(string from)
             {
                 sbyte res;
-                if (!SByte.TryParse(StringHelper.RemoveBlanks(from), NumberStyles.Number, mCulture, out res))
+                if (!SByte.TryParse(StringHelperAttributes.RemoveBlanks(from), NumberStyles.Number, mCulture, out res))
                     throw new ConvertException(from, mType);
                 return res;
             }
@@ -415,7 +412,7 @@ namespace FileHelpers.Converters
             {
                 short res;
                 if (
-                    !short.TryParse(StringHelper.RemoveBlanks(from),
+                    !short.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -451,7 +448,7 @@ namespace FileHelpers.Converters
             {
                 int res;
                 if (
-                    !int.TryParse(StringHelper.RemoveBlanks(from),
+                    !int.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -488,7 +485,7 @@ namespace FileHelpers.Converters
             {
                 long res;
                 if (
-                    !long.TryParse(StringHelper.RemoveBlanks(from),
+                    !long.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -532,7 +529,7 @@ namespace FileHelpers.Converters
             {
                 decimal res;
                 if (
-                    !decimal.TryParse(StringHelper.RemoveBlanks(from),
+                    !decimal.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -568,7 +565,7 @@ namespace FileHelpers.Converters
             {
                 float res;
                 if (
-                    !Single.TryParse(StringHelper.RemoveBlanks(from),
+                    !Single.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -604,7 +601,7 @@ namespace FileHelpers.Converters
             {
                 double res;
                 if (
-                    !Double.TryParse(StringHelper.RemoveBlanks(from),
+                    !Double.TryParse(StringHelperAttributes.RemoveBlanks(from),
                         NumberStyles.Number | NumberStyles.AllowExponent,
                         mCulture,
                         out res))
@@ -642,7 +639,7 @@ namespace FileHelpers.Converters
             protected override object ParseString(string from)
             {
                 double res;
-                var blanksRemoved = StringHelper.RemoveBlanks(from);
+                var blanksRemoved = StringHelperAttributes.RemoveBlanks(from);
                 if (blanksRemoved.EndsWith("%"))
                 {
                     if (
