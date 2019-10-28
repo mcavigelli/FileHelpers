@@ -1,6 +1,9 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using FileHelpers.Events;
 
-namespace FileHelpers.Interfaces
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Interface used to provide <b>In record notification of write operations.</b>

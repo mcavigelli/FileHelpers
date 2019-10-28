@@ -223,6 +223,8 @@
     <Compile Include="Engines\FixedFileEngine.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engines\INotifyRead.cs" />
+    <Compile Include="Engines\INotifyWrite.cs" />
     <Compile Include="Engines\MultiRecordEngine.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -277,10 +279,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\StringHelper.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Interfaces\INotifyRead.cs" />
-    <Compile Include="Interfaces\INotifyWrite.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Messages\GenerateMessages1.autogen.cs">
@@ -339,6 +337,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

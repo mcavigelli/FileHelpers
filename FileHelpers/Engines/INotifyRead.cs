@@ -1,6 +1,9 @@
-﻿using FileHelpers.Events;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using FileHelpers.Events;
 
-namespace FileHelpers.Interfaces
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Interface used to provide In record notification of read operations.
