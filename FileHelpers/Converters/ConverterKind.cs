@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace FileHelpers.Attributes
+namespace FileHelpers.Converters
 {
     /// <summary>
     /// Indicates the Conversion used in the <see cref="T:FileHelpers.Attributes.FieldConverterAttribute"/>.

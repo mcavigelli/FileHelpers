@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Converters;
-using FileHelpers.Engines;
-using FileHelpers.ErrorHandling;
+using FileHelpers.Core;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Collection of operations that we perform on a type, cached for reuse

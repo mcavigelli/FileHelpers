@@ -1,9 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using FileHelpers.Core;
 using FileHelpers.Fields;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Record information,  whether it is delimited or other details

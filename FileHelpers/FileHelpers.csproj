@@ -106,7 +106,7 @@
     <Compile Include="Attributes\ConditionalRecordAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes\ConverterKind.cs" />
+    <Compile Include="Converters\ConverterKind.cs" />
     <Compile Include="Attributes\FieldAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,7 +123,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Attributes\FieldArrayLength.cs" />
-    <Compile Include="Attributes\FieldConverterAttribute.cs">
+    <Compile Include="Converters\FieldConverterAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Attributes\FieldDelimiterAttribute.cs">
@@ -187,15 +187,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\FieldInfoCacheManipulator.cs" />
-    <Compile Include="Core\ForwardReader.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Core\IRecordInfo.cs" />
     <Compile Include="Core\IRecordReader.cs" />
-    <Compile Include="Core\RecordOperations.cs" />
     <Compile Include="Core\ReflectionHelper.cs" />
     <Compile Include="Core\TrimMode.cs" />
     <Compile Include="Engines\EventEngineBase.cs" />
+    <Compile Include="Engines\ForwardReader.cs" />
     <Compile Include="Engines\IFileHelperAsyncEngine.cs" />
     <Compile Include="Engines\IFileHelperEngine.cs" />
     <Compile Include="Core\LineInfo.cs">
@@ -225,9 +221,11 @@
     </Compile>
     <Compile Include="Engines\INotifyRead.cs" />
     <Compile Include="Engines\INotifyWrite.cs" />
+    <Compile Include="Engines\IRecordInfo.cs" />
     <Compile Include="Engines\MultiRecordEngine.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engines\RecordOperations.cs" />
     <Compile Include="Enums\AlignMode.cs">
       <SubType>Code</SubType>
     </Compile>

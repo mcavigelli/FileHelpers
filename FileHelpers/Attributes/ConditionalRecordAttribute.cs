@@ -6,7 +6,7 @@ namespace FileHelpers.Attributes
     /// <summary>Allow to declaratively set what records must be included or excluded while reading.</summary>
     /// <remarks>See the <a href="http://www.filehelpers.net/mustread">Complete attributes list</a> for more information and examples of each one.</remarks>
     /// <example>
-    /// [DelimitedRecord(",")] 
+    /// [DelimitedRecord(",")] a
     /// [ConditionalRecord(RecordCondition.ExcludeIfBegins, "//")] 
     /// public class ConditionalType1 
     /// { 
