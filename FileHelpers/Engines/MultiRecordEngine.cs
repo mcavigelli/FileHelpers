@@ -6,7 +6,6 @@ using System.IO;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Options;
@@ -95,7 +94,7 @@ namespace FileHelpers.Engines
                                                 " is already in the engine. You can't pass the same type twice to the constructor.");
                 }
 
-                mMultiRecordInfo[i] = Core.RecordInfo.Resolve(mTypes[i]);
+                mMultiRecordInfo[i] = Engines.RecordInfo.Resolve(mTypes[i]);
                 mMultiRecordOptions[i] = CreateRecordOptionsCore(mMultiRecordInfo[i]);
 
                 mRecordInfoHash.Add(mTypes[i], mMultiRecordInfo[i]);
@@ -177,10 +176,7 @@ namespace FileHelpers.Engines
 
                 bool byPass = false;
 
-                var line = new LineInfo(currentLine)
-                {
-                    mReader = freader
-                };
+                var line = new LineInfo(currentLine, freader);
 
                 while (currentLine != null)
                 {
@@ -652,10 +648,7 @@ namespace FileHelpers.Engines
 
             mLastRecord = null;
 
-            var line = new LineInfo(currentLine)
-            {
-                mReader = mAsyncReader
-            };
+            var line = new LineInfo(currentLine, mAsyncReader);
 
             while (true)
             {

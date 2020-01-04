@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 
-namespace FileHelpers.Attributes
+namespace FileHelpers.Core
 {
     /// <summary>Base class for all the library Exceptions.</summary>
     [Serializable]

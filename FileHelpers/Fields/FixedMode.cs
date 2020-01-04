@@ -1,10 +1,8 @@
-using FileHelpers.Attributes;
-
-namespace FileHelpers.Enums
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// Indicates the behavior when variable length records are found in a
-    /// [<see cref="FixedLengthRecordAttribute"/>]. (Note: nothing in
+    /// FixedLengthRecordAttribute. (Note: nothing in
     /// common with [FieldOptional])
     /// </summary>
     public enum FixedMode

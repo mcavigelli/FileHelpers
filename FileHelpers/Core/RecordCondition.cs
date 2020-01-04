@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
 namespace FileHelpers.Core
 {
     /// <summary>The condition used to include or exclude each record.</summary>

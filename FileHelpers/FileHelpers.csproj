@@ -102,7 +102,10 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes\BadUsageException.cs" />
+    <Compile Include="Core\ComparerCache.cs" />
+    <Compile Include="Core\IForwardReader.cs" />
+    <Compile Include="Fields\BadFieldUsageException.cs" />
+    <Compile Include="Core\BadUsageException.cs" />
     <Compile Include="Attributes\ConditionalRecordAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -150,7 +153,7 @@
     <Compile Include="Attributes\FieldTrimAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes\FileHelpersException.cs" />
+    <Compile Include="Core\FileHelpersException.cs" />
     <Compile Include="Attributes\FixedLengthRecordAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -178,17 +181,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\EnumConverter.cs" />
-    <Compile Include="Core\ExtensionsFileHelpers.cs" />
     <Compile Include="Core\MultilineMode.cs" />
     <Compile Include="Core\QuoteMode.cs" />
     <Compile Include="Core\RecordCondition.cs" />
-    <Compile Include="Core\RecordInfo.Factory.cs" />
+    <Compile Include="Engines\RecordInfo.Factory.cs" />
     <Compile Include="Core\ExtractInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\FieldInfoCacheManipulator.cs" />
     <Compile Include="Core\IRecordReader.cs" />
-    <Compile Include="Core\ReflectionHelper.cs" />
+    <Compile Include="Engines\ReflectionHelper.cs" />
     <Compile Include="Core\TrimMode.cs" />
     <Compile Include="Engines\EventEngineBase.cs" />
     <Compile Include="Engines\ForwardReader.cs" />
@@ -198,7 +200,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\NewLineDelimitedRecordReader.cs" />
-    <Compile Include="Core\RecordInfo.cs">
+    <Compile Include="Engines\RecordInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\DelimitedFileEngine.cs">
@@ -226,13 +228,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\RecordOperations.cs" />
-    <Compile Include="Enums\AlignMode.cs">
+    <Compile Include="Fields\AlignMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Enums\ErrorMode.cs">
+    <Compile Include="Engines\ErrorMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Enums\FixedMode.cs">
+    <Compile Include="Fields\FixedMode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ErrorHandling\ErrorInfo.cs">
@@ -265,12 +267,12 @@
     <Compile Include="Fields\FixedLengthField.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\Attributes.cs" />
+    <Compile Include="Fields\Attributes.cs" />
     <Compile Include="Core\ConditionHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Fields\TypeHelper.cs" />
-    <Compile Include="Helpers\ExHelper.cs">
+    <Compile Include="Options\ExHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\StreamHelper.cs">

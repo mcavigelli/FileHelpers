@@ -5,7 +5,6 @@ using System.IO;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Options;
@@ -52,7 +51,7 @@ namespace FileHelpers.Engines
             }
 
             mRecordType = recordType;
-            RecordInfo = Core.RecordInfo.Resolve(recordType);
+            RecordInfo = Engines.RecordInfo.Resolve(recordType);
             mEncoding = encoding;
 
             CreateRecordOptions();

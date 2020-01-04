@@ -2,7 +2,6 @@ using System.Reflection;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 
 namespace FileHelpers.Fields
 {
@@ -76,7 +75,7 @@ namespace FileHelpers.Fields
                     return ExtractedInfo.Empty;
                 else {
                     throw new BadUsageException("End Of Line found processing the field: " + FieldInfo.Name +
-                                                " at line " + line.mReader.LineNumber.ToString()
+                                                " at line " + line.ForwardReader.LineNumber.ToString()
                                                 +
                                                 ". (You need to mark it as [FieldOptional] if you want to avoid this exception)");
                 }
@@ -91,7 +90,7 @@ namespace FileHelpers.Fields
                 else {
                     throw new BadUsageException("The string '" + line.CurrentString + "' (length " +
                                                 line.CurrentLength.ToString() + ") at line "
-                                                + line.mReader.LineNumber.ToString() +
+                                                + line.ForwardReader.LineNumber.ToString() +
                                                 " has less chars than the defined for " + FieldInfo.Name
                                                 + " (" + FieldLength.ToString() +
                                                 "). You can use the [FixedLengthRecord(FixedMode.AllowLessChars)] to avoid this problem.");
@@ -104,7 +103,7 @@ namespace FileHelpers.Fields
                      FixedMode != FixedMode.AllowVariableLength) {
                 throw new BadUsageException("The string '" + line.CurrentString + "' (length " +
                                             line.CurrentLength.ToString() + ") at line "
-                                            + line.mReader.LineNumber.ToString() +
+                                            + line.ForwardReader.LineNumber.ToString() +
                                             " has more chars than the defined for the last field "
                                             + FieldInfo.Name + " (" + FieldLength.ToString() +
                                             ").You can use the [FixedLengthRecord(FixedMode.AllowMoreChars)] to avoid this problem.");

@@ -1,7 +1,5 @@
 using System;
-using System.Globalization;
 using System.Text;
-using FileHelpers.Attributes;
 using FileHelpers.Core;
 
 namespace FileHelpers.Engines
@@ -114,20 +112,6 @@ namespace FileHelpers.Engines
             sb.Append(quoteChar);
         }
 
-        private static CultureInfo mCulture;
-
-        /// <summary>
-        /// Create an invariant culture comparison operator
-        /// </summary>
-        /// <returns>Comparison operations</returns>
-        internal static CompareInfo CreateComparer()
-        {
-            if (mCulture == null)
-                mCulture = CultureInfo.InvariantCulture; // new CultureInfo("en-us");
-
-            return mCulture.CompareInfo;
-        }
-
         /// <summary>
         /// replace the one string with another, and keep doing it
         /// </summary>
@@ -137,7 +121,7 @@ namespace FileHelpers.Engines
         /// <returns>String with all multiple occurrences replaced</returns>
         private static string ReplaceRecursive(string original, string oldValue, string newValue)
         {
-            const int maxTries = 1000;
+            const int MaxTries = 1000;
 
             string ante, res;
 
@@ -150,7 +134,7 @@ namespace FileHelpers.Engines
                 ante = res;
                 res = ante.Replace(oldValue, newValue);
             } while (ante != res ||
-                     i > maxTries);
+                     i > MaxTries);
 
             return res;
         }

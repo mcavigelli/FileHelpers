@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace FileHelpers.Helpers
+namespace FileHelpers.Options
 {
     /// <summary>
     /// add validation exceptions

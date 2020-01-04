@@ -4,8 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using FileHelpers.Attributes;
+using FileHelpers.Core;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Create an object and assign

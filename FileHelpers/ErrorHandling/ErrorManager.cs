@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using FileHelpers.Engines;
-using FileHelpers.Enums;
 
 namespace FileHelpers.ErrorHandling
 {

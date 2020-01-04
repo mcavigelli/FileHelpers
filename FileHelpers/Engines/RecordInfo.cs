@@ -4,10 +4,10 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using FileHelpers.Attributes;
-using FileHelpers.Engines;
+using FileHelpers.Core;
 using FileHelpers.Fields;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Engines
 {
     /// <summary>An internal class used to store information about the Record Type.</summary>
     internal sealed partial class RecordInfo
@@ -134,7 +134,7 @@ namespace FileHelpers.Core
         /// </summary>
         private void InitRecordFields()
         {
-            var recordAttribute = Helpers.Attributes.GetFirstInherited<TypedRecordAttribute>(RecordType);
+            var recordAttribute = FileHelpers.Fields.Attributes.GetFirstInherited<TypedRecordAttribute>(RecordType);
 
             if (recordAttribute == null) {
                 throw new BadUsageException(Messages.Messages.Errors.ClassWithOutRecordAttribute
@@ -148,15 +148,15 @@ namespace FileHelpers.Core
                     .Text);
             }
 
-            Helpers.Attributes.WorkWithFirst<IgnoreFirstAttribute>(
+            FileHelpers.Fields.Attributes.WorkWithFirst<IgnoreFirstAttribute>(
                 RecordType,
                 a => IgnoreFirst = a.NumberOfLines);
 
-            Helpers.Attributes.WorkWithFirst<IgnoreLastAttribute>(
+            FileHelpers.Fields.Attributes.WorkWithFirst<IgnoreLastAttribute>(
                 RecordType,
                 a => IgnoreLast = a.NumberOfLines);
 
-            Helpers.Attributes.WorkWithFirst<IgnoreEmptyLinesAttribute>(
+            FileHelpers.Fields.Attributes.WorkWithFirst<IgnoreEmptyLinesAttribute>(
                 RecordType,
                 a => {
                     IgnoreEmptyLines = true;
@@ -164,7 +164,7 @@ namespace FileHelpers.Core
                 });
 
 #pragma warning disable CS0618 // Type or member is obsolete
-            Helpers.Attributes.WorkWithFirst<IgnoreCommentedLinesAttribute>(
+            FileHelpers.Fields.Attributes.WorkWithFirst<IgnoreCommentedLinesAttribute>(
 #pragma warning restore CS0618 // Type or member is obsolete
                 RecordType,
                 a => {
@@ -173,7 +173,7 @@ namespace FileHelpers.Core
                     CommentAnyPlace = a.AnyPlace;
                 });
 
-            Helpers.Attributes.WorkWithFirst<ConditionalRecordAttribute>(
+            FileHelpers.Fields.Attributes.WorkWithFirst<ConditionalRecordAttribute>(
                 RecordType,
                 a => {
                     RecordCondition = a.Condition;
@@ -437,7 +437,7 @@ namespace FileHelpers.Core
         /// <returns>Record info for that type</returns>
         public static IRecordInfo Resolve(Type type)
         {
-            return RecordInfoFactory.Resolve(type);
+            return RecordInfo.RecordInfoFactory.Resolve(type);
         }
 
         /// <summary>

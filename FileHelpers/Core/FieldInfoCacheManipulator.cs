@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace FileHelpers.Core
 {
-    internal class FieldInfoCacheManipulator
+    internal static class FieldInfoCacheManipulator
     {
         private static PropertyInfo mCacheProperty;
 

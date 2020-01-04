@@ -1,7 +1,9 @@
-using FileHelpers.Engines;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using FileHelpers.ErrorHandling;
 
-namespace FileHelpers.Enums
+namespace FileHelpers.Engines
 {
     /// <summary>Indicates the behavior when the engine classes like <see cref="FileHelperEngine"/> class found an error.</summary>
     public enum ErrorMode

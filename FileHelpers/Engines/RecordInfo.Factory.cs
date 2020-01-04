@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FileHelpers.Engines;
 
-namespace FileHelpers.Core
+namespace FileHelpers.Engines
 {
     /// <summary>An internal class used to store information about the Record Type.</summary>
     internal sealed partial class RecordInfo

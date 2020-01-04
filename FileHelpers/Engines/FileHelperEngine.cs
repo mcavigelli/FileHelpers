@@ -8,7 +8,6 @@ using System.IO;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Streams;
@@ -212,10 +211,7 @@ namespace FileHelpers.Engines
                 if (maxRecords < 0)
                     maxRecords = int.MaxValue;
 
-                var line = new LineInfo(currentLine)
-                {
-                    mReader = freader
-                };
+                var line = new LineInfo(currentLine, freader);
 
                 var values = new object[RecordInfo.FieldCount];
 

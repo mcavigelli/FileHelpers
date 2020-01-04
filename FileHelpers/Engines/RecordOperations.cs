@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
-using FileHelpers.Attributes;
 using FileHelpers.Converters;
 using FileHelpers.Core;
 
@@ -58,7 +57,7 @@ namespace FileHelpers.Engines
                         throw new ConvertException(null,
                             mRecordInfo.Fields[i].FieldTypeInternal,
                             mRecordInfo.Fields[i].FieldInfo.Name,
-                            line.mReader.LineNumber,
+                            line.ForwardReader.LineNumber,
                             -1,
                             Messages.Messages.Errors.WrongConverter
                                 .FieldName(mRecordInfo.Fields[i].FieldInfo.Name)
@@ -101,7 +100,7 @@ namespace FileHelpers.Engines
                         throw new ConvertException(null,
                             mRecordInfo.Fields[i].FieldTypeInternal,
                             mRecordInfo.Fields[i].FieldInfo.Name,
-                            line.mReader.LineNumber,
+                            line.ForwardReader.LineNumber,
                             -1,
                             Messages.Messages.Errors.WrongConverter
                                 .FieldName(mRecordInfo.Fields[i].FieldInfo.Name)

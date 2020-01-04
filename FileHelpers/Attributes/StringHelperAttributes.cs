@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 
 namespace FileHelpers.Attributes
 {
+    goto converterHelper
+
     internal static class StringHelperAttributes
     {
         /// <summary>

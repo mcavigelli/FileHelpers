@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using FileHelpers.Attributes;
+using FileHelpers.Core;
 
 namespace FileHelpers.Converters
 {

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using FileHelpers.Attributes;
+using FileHelpers.Core;
 
 namespace FileHelpers.Converters
 {

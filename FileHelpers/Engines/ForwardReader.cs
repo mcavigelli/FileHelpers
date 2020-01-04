@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using FileHelpers.Core;
 
 namespace FileHelpers.Engines
 {
     internal sealed class ForwardReader
-        : IDisposable
+        : IDisposable, IForwardReader
     {
         /// <summary>
         /// Return file record by record

@@ -4,7 +4,6 @@ using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.ErrorHandling;
 
 namespace FileHelpers.Fields
 {
@@ -16,7 +15,7 @@ namespace FileHelpers.Fields
     {
         #region "  Constructor  "
 
-        private static readonly CompareInfo mCompare = StringHelper.CreateComparer();
+        private static readonly CompareInfo mCompare = ComparerCache.CreateComparer();
 
         /// <summary>
         /// Create an empty delimited field structure
@@ -107,7 +106,7 @@ namespace FileHelpers.Fields
                     if (!IsLast &&
                         !line.StartsWith(Separator) &&
                         !line.IsEOL()) {
-                        throw new BadUsageException(line,
+                        throw new BadFieldUsageException(line,
                             "The field " + FieldInfo.Name + " is quoted but the quoted char: " + quotedStr +
                             " not is just before the separator (You can use [FieldTrim] to avoid this error)");
                     }
@@ -119,11 +118,11 @@ namespace FileHelpers.Fields
                         return BasicExtractString(line);
                     else if (line.StartsWithTrim(quotedStr)) {
                         throw new BadUsageException(
-                            $"The field '{FieldInfo.Name}' has spaces before the QuotedChar at line {line.mReader.LineNumber}. Use the TrimAttribute to by pass this error. Field String: {line.CurrentString}");
+                            $"The field '{FieldInfo.Name}' has spaces before the QuotedChar at line {line.ForwardReader.LineNumber}. Use the TrimAttribute to by pass this error. Field String: {line.CurrentString}");
                     }
                     else {
                         throw new BadUsageException(
-                            $"The field '{FieldInfo.Name}' does not begin with the QuotedChar at line {line.mReader.LineNumber}. You can use FieldQuoted(QuoteMode.OptionalForRead) to allow optional quoted field. Field String: {line.CurrentString}");
+                            $"The field '{FieldInfo.Name}' does not begin with the QuotedChar at line {line.ForwardReader.LineNumber}. You can use FieldQuoted(QuoteMode.OptionalForRead) to allow optional quoted field. Field String: {line.CurrentString}");
                     }
                 }
             }
@@ -143,9 +142,9 @@ namespace FileHelpers.Fields
                         "Delimiter '{0}' found after the last field '{1}' (the file is wrong or you need to add a field to the record class)",
                         Separator,
                         FieldInfo.Name,
-                        line.mReader.LineNumber);
+                        line.ForwardReader.LineNumber);
 
-                throw new BadUsageException(line.mReader.LineNumber, line.mCurrentPos, msg);
+                throw new BadUsageException(line.ForwardReader.LineNumber, line.mCurrentPos, msg);
             }
             else {
                 int sepPos = line.IndexOf(Separator);
@@ -159,7 +158,7 @@ namespace FileHelpers.Fields
 
                         if (IsFirst && line.EmptyFromPos()) {
                             msg =
-                                $"The line {line.mReader.LineNumber} is empty. Maybe you need to use the attribute [IgnoreEmptyLines] in your record class.";
+                                $"The line {line.ForwardReader.LineNumber} is empty. Maybe you need to use the attribute [IgnoreEmptyLines] in your record class.";
                         }
                         else {
                             msg =
@@ -167,10 +166,10 @@ namespace FileHelpers.Fields
                                     "Delimiter '{0}' not found after field '{1}' (the record has less fields, the delimiter is wrong or the next field must be marked as optional).",
                                     Separator,
                                     FieldInfo.Name,
-                                    line.mReader.LineNumber);
+                                    line.ForwardReader.LineNumber);
                         }
 
-                        throw new FileHelpersException(line.mReader.LineNumber, line.mCurrentPos, msg);
+                        throw new FileHelpersException(line.ForwardReader.LineNumber, line.mCurrentPos, msg);
                     }
                     else
                         sepPos = line.mLineStr.Length;

@@ -6,7 +6,6 @@ using System.IO;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.Enums;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Streams;
@@ -280,10 +279,7 @@ namespace FileHelpers.Engines
 
             mLastRecord = default(T);
 
-            var line = new LineInfo(string.Empty)
-            {
-                mReader = mAsyncReader
-            };
+            var line = new LineInfo(string.Empty, mAsyncReader);
 
             if (mLastRecordValues == null)
                 mLastRecordValues = new object[RecordInfo.FieldCount];

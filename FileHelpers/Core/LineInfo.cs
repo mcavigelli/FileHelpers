@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using FileHelpers.Engines;
 
 namespace FileHelpers.Core
 {
@@ -17,24 +16,15 @@ namespace FileHelpers.Core
     [DebuggerDisplay("{DebuggerDisplayStr()}")]
     internal sealed class LineInfo
     {
-        //public static readonly LineInfo Empty = new LineInfo(string.Empty);
-
-        #region "  Constructor  "
-
-        //static readonly char[] mEmptyChars = new char[] {};
         /// <summary>
         /// Create a line info with data from line
         /// </summary>
-        /// <param name="line"></param>
-        public LineInfo(string line)
+        public LineInfo(string line, IForwardReader forwardReader)
         {
-            mReader = null;
+            ForwardReader = forwardReader;
             mLineStr = line;
-            //mLine = line == null ? mEmptyChars : line.ToCharArray();
             mCurrentPos = 0;
         }
-
-        #endregion
 
         /// <summary>
         /// Return part of line,  Substring
@@ -47,20 +37,12 @@ namespace FileHelpers.Core
             return mLineStr.Substring(from, count);
         }
 
-        #region "  Internal Fields  "
-
-        //internal string  mLine;
-        //internal char[] mLine;
-
         /// <summary>
         /// Record read from reader
         /// </summary>
         internal string mLineStr;
 
-        /// <summary>
-        /// Reader that got the string
-        /// </summary>
-        internal ForwardReader mReader;
+        public IForwardReader ForwardReader { get; }
 
         /// <summary>
         /// Where we are processing records from
@@ -76,8 +58,6 @@ namespace FileHelpers.Core
             '\u2006', '\u2007', '\u2008',
             '\u2009', '\u200a', '\u200b', '\u3000', '\ufeff'
         };
-
-        #endregion
 
         /// <summary>
         /// Debugger display string
@@ -196,13 +176,11 @@ namespace FileHelpers.Core
         /// </summary>
         public void ReadNextLine()
         {
-            mLineStr = mReader.ReadNextLine();
-            //mLine = mLineStr.ToCharArray();
-
+            mLineStr = ForwardReader.ReadNextLine();
             mCurrentPos = 0;
         }
 
-        private static readonly CompareInfo mCompare = StringHelper.CreateComparer();
+        private static readonly CompareInfo mCompare = ComparerCache.CreateComparer();
 
         /// <summary>
         /// Find the location of the next string in record

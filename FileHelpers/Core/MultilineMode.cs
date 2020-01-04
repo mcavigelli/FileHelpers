@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
 namespace FileHelpers.Core
 {
     /// <summary>Indicates the behavior of multiline fields.</summary>

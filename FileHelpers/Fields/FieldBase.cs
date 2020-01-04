@@ -258,7 +258,7 @@ namespace FileHelpers.Fields
                     }
 
                     var attbFixedLength = (FieldFixedLengthAttribute)fieldAttb;
-                    var attbAlign = Helpers.Attributes.GetFirst<FieldAlignAttribute>(mi);
+                    var attbAlign = Attributes.GetFirst<FieldAlignAttribute>(mi);
 
                     res = new FixedLengthField(fi,
                         attbFixedLength.Length,
@@ -304,7 +304,7 @@ namespace FileHelpers.Fields
                 res.Discarded = mi.IsDefined(typeof(FieldValueDiscardedAttribute), false);
 
                 // FieldTrim
-                Helpers.Attributes.WorkWithFirst<FieldTrimAttribute>(mi,
+                Attributes.WorkWithFirst<FieldTrimAttribute>(mi,
                     (x) =>
                     {
                         res.TrimMode = x.TrimMode;
@@ -312,7 +312,7 @@ namespace FileHelpers.Fields
                     });
 
                 // FieldQuoted
-                Helpers.Attributes.WorkWithFirst<FieldQuotedAttribute>(mi,
+                Attributes.WorkWithFirst<FieldQuotedAttribute>(mi,
                     (x) =>
                     {
                         if (res is FixedLengthField)
@@ -331,10 +331,10 @@ namespace FileHelpers.Fields
                     });
 
                 // FieldOrder
-                Helpers.Attributes.WorkWithFirst<FieldOrderAttribute>(mi, x => res.FieldOrder = x.Order);
+                Attributes.WorkWithFirst<FieldOrderAttribute>(mi, x => res.FieldOrder = x.Order);
 
                 // FieldCaption
-                Helpers.Attributes.WorkWithFirst<FieldCaptionAttribute>(mi, x => res.FieldCaption = x.Caption);
+                Attributes.WorkWithFirst<FieldCaptionAttribute>(mi, x => res.FieldCaption = x.Caption);
 
                 // FieldOptional
                 res.IsOptional = mi.IsDefined(typeof(FieldOptionalAttribute), false);
@@ -355,7 +355,7 @@ namespace FileHelpers.Fields
                     res.ArrayMinLength = int.MinValue;
                     res.ArrayMaxLength = int.MaxValue;
 
-                    Helpers.Attributes.WorkWithFirst<FieldArrayLengthAttribute>(mi,
+                    Attributes.WorkWithFirst<FieldArrayLengthAttribute>(mi,
                         (x) =>
                         {
                             res.ArrayMinLength = x.MinLength;
@@ -555,17 +555,17 @@ namespace FileHelpers.Fields
                 // Any trailing characters, terminate
                 if (line.EmptyFromPos() == false)
                 {
-                    throw new BadUsageException(line,
+                    throw new BadFieldUsageException(line,
                         "Text '" + line.CurrentString +
                         "' found before the new line of the field: " + FieldInfo.Name +
                         " (this is not allowed when you use [FieldInNewLine])");
                 }
 
-                line.ReLoad(line.mReader.ReadNextLine());
+                line.ReLoad(line.ForwardReader.ReadNextLine());
 
                 if (line.mLineStr == null)
                 {
-                    throw new BadUsageException(line,
+                    throw new BadFieldUsageException(line,
                         "End of stream found parsing the field " + FieldInfo.Name +
                         ". Please check the class record.");
                 }
@@ -627,12 +627,12 @@ namespace FileHelpers.Fields
                 if (res.Count < ArrayMinLength)
                 {
                     throw new InvalidOperationException(
-                        $"Line: {line.mReader.LineNumber.ToString()} Column: {line.mCurrentPos.ToString()} Field: {FieldInfo.Name}. The array has only {res.Count} values, less than the minimum length of {ArrayMinLength}");
+                        $"Line: {line.ForwardReader.LineNumber.ToString()} Column: {line.mCurrentPos.ToString()} Field: {FieldInfo.Name}. The array has only {res.Count} values, less than the minimum length of {ArrayMinLength}");
                 }
                 else if (IsLast && line.IsEOL() == false)
                 {
                     throw new InvalidOperationException(
-                        $"Line: {line.mReader.LineNumber} Column: {line.mCurrentPos} Field: {FieldInfo.Name}. The array has more values than the maximum length of {ArrayMaxLength}");
+                        $"Line: {line.ForwardReader.LineNumber} Column: {line.mCurrentPos} Field: {FieldInfo.Name}. The array has more values than the maximum length of {ArrayMaxLength}");
                 }
 
                 // TODO:   is there a reason we go through all the array processing then discard it
@@ -728,7 +728,7 @@ namespace FileHelpers.Fields
             catch (ConvertException ex)
             {
                 ex.FieldName = FieldInfo.Name;
-                ex.LineNumber = line.mReader.LineNumber;
+                ex.LineNumber = line.ForwardReader.LineNumber;
                 ex.ColumnNumber = fieldString.ExtractedFrom + 1;
                 throw;
             }
@@ -744,7 +744,7 @@ namespace FileHelpers.Fields
                     throw new ConvertException(extractedString,
                         FieldTypeInternal,
                         FieldInfo.Name,
-                        line.mReader.LineNumber,
+                        line.ForwardReader.LineNumber,
                         fieldString.ExtractedFrom + 1,
                         ex.Message,
                         ex);
@@ -754,7 +754,7 @@ namespace FileHelpers.Fields
                     throw new ConvertException(extractedString,
                         FieldTypeInternal,
                         FieldInfo.Name,
-                        line.mReader.LineNumber,
+                        line.ForwardReader.LineNumber,
                         fieldString.ExtractedFrom + 1,
                         "Your custom converter: " + Converter.GetType().Name + " throws an " + ex.GetType().Name +
                         " with the message: " + ex.Message,

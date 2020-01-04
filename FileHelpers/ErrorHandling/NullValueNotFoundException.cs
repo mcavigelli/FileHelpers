@@ -24,6 +24,6 @@ namespace FileHelpers.ErrorHandling
         /// <param name="message">The exception Message</param>
         /// <param name="line">Line to display in message</param>
         internal NullValueNotFoundException(LineInfo line, string message)
-            : base(line, message) {}
+            : base(line.ForwardReader.LineNumber, line.mCurrentPos, message) {}
     }
 }
