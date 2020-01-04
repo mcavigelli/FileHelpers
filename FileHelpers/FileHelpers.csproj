@@ -169,7 +169,7 @@
     <Compile Include="Attributes\IgnoreLastAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Attributes\StringHelperAttributes.cs" />
+    <Compile Include="Converters\StringHelperAttributes.cs" />
     <Compile Include="Attributes\TypedRecordAttribute.cs">
       <SubType>Code</SubType>
     </Compile>

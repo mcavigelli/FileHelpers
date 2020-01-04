@@ -1,16 +1,15 @@
 using System;
 using System.Text;
 
-namespace FileHelpers.Attributes
+namespace FileHelpers.Converters
 {
-    goto converterHelper
-
     internal static class StringHelperAttributes
     {
         /// <summary>
         /// Remove leading blanks and blanks after the plus or minus sign from a string
         /// to allow it to be parsed by ToInt or other converters
         /// </summary>
+        /// 
         /// <param name="source">source to trim</param>
         /// <returns>String without blanks</returns>
         /// <remarks>
