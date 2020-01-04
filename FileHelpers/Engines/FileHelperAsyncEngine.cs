@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
@@ -205,7 +204,7 @@ namespace FileHelpers.Engines
                     string temp = recordReader.ReadRecordString();
                     mLineNumber++;
                     if (temp != null)
-                        HeaderText += temp + StringHelper.NewLine;
+                        HeaderText += temp + Environment.NewLine;
                     else
                         break;
                 }

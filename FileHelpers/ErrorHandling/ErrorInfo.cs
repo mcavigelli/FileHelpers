@@ -83,10 +83,10 @@ namespace FileHelpers.ErrorHandling
                 else {
                     if (from is ConvertException) {
                         return "In the field '" + ((ConvertException) from).FieldName + "': " +
-                               ((ConvertException) from).Message.Replace(StringHelper.NewLine, " -> ");
+                               ((ConvertException) from).Message.Replace(Environment.NewLine, " -> ");
                     }
                     else
-                        return ((Exception) from).Message.Replace(StringHelper.NewLine, " -> ");
+                        return ((Exception) from).Message.Replace(Environment.NewLine, " -> ");
                 }
             }
 

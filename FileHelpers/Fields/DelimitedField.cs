@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
@@ -188,7 +189,7 @@ namespace FileHelpers.Fields
         {
             string field = base.CreateFieldString(fieldValue);
 
-            bool hasNewLine = mCompare.IndexOf(field, StringHelper.NewLine, CompareOptions.Ordinal) >= 0;
+            bool hasNewLine = mCompare.IndexOf(field, Environment.NewLine, CompareOptions.Ordinal) >= 0;
 
             // If have a new line and this is not allowed.  We throw an exception
             if (hasNewLine &&
