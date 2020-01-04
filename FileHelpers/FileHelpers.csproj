@@ -234,7 +234,7 @@
     <Compile Include="Engines\ErrorMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engines\FixedMode.cs">
+    <Compile Include="Core\FixedMode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ErrorHandling\ErrorInfo.cs">

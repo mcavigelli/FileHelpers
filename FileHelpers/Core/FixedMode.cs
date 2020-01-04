@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace FileHelpers.Engines
+namespace FileHelpers.Core
 {
     /// <summary>
     /// Indicates the behavior when variable length records are found in a
