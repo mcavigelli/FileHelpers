@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using FileHelpers.Core;
-using FileHelpers.Engines;
+using FileHelpers.Fields;
 
-namespace FileHelpers.Fields
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// This class allows you to set some options of the records at runtime.

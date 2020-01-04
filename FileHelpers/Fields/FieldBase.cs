@@ -7,6 +7,7 @@ using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Converters;
 using FileHelpers.Core;
+using FileHelpers.Engines;
 
 namespace FileHelpers.Fields
 {

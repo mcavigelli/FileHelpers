@@ -287,13 +287,13 @@
       <DependentUpon>GenerateMessages.tt</DependentUpon>
     </Compile>
     <Compile Include="Messages\MessageBase.cs" />
-    <Compile Include="Fields\DelimitedRecordOptions.cs">
+    <Compile Include="Engines\DelimitedRecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Fields\FixedRecordOptions.cs">
+    <Compile Include="Engines\FixedRecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Fields\RecordOptions.cs">
+    <Compile Include="Engines\RecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Events\ProgressEventArgs.cs">

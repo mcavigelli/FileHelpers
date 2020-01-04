@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using FileHelpers.Engines;
+using FileHelpers.Fields;
 
-namespace FileHelpers.Fields
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// This class allows you to set some options of the delimited records
