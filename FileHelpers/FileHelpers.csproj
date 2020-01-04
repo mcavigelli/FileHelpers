@@ -243,7 +243,7 @@
     <Compile Include="ErrorHandling\ErrorManager.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ErrorHandling\NullValueNotFoundException.cs" />
+    <Compile Include="Fields\NullValueNotFoundException.cs" />
     <Compile Include="Events\BeforeReadEventArgs.cs" />
     <Compile Include="Events\BeforeWriteEventArgs.cs" />
     <Compile Include="Events\Delegates.cs">
