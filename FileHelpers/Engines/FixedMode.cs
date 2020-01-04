@@ -1,4 +1,8 @@
-namespace FileHelpers.Fields
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Indicates the behavior when variable length records are found in a

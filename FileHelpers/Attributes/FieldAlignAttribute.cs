@@ -1,5 +1,5 @@
 using System;
-using FileHelpers.Fields;
+using FileHelpers.Core;
 
 namespace FileHelpers.Attributes
 {

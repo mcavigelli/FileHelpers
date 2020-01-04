@@ -1,4 +1,4 @@
-namespace FileHelpers.Fields
+namespace FileHelpers.Core
 {
     /// <summary>Indicates the align of the field when the <see cref="T:FileHelpers.Engines.FileHelperEngine"/> <b>writes</b> the record.</summary>
     public enum AlignMode

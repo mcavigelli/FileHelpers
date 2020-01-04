@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
+using FileHelpers.Engines;
 
 namespace FileHelpers.Fields
 {

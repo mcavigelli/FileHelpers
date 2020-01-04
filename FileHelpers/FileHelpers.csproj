@@ -228,13 +228,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\RecordOperations.cs" />
-    <Compile Include="Fields\AlignMode.cs">
+    <Compile Include="Core\AlignMode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\ErrorMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Fields\FixedMode.cs">
+    <Compile Include="Engines\FixedMode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ErrorHandling\ErrorInfo.cs">

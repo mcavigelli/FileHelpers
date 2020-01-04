@@ -9,7 +9,7 @@ namespace FileHelpers.Attributes
     /// [DelimitedRecord(",")] a
     /// [ConditionalRecord(RecordCondition.ExcludeIfBegins, "//")] 
     /// public class ConditionalType1 
-    /// { 
+    /// { a
     /// 
     /// // Using Regular Expressions example
     /// [DelimitedRecord(",")]
