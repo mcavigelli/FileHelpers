@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.Options;
+using FileHelpers.Fields;
 
 namespace FileHelpers.Engines
 {

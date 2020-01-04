@@ -272,7 +272,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Fields\TypeHelper.cs" />
-    <Compile Include="Options\ExHelper.cs">
+    <Compile Include="Fields\ExHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\StreamHelper.cs">
@@ -287,13 +287,13 @@
       <DependentUpon>GenerateMessages.tt</DependentUpon>
     </Compile>
     <Compile Include="Messages\MessageBase.cs" />
-    <Compile Include="Options\DelimitedRecordOptions.cs">
+    <Compile Include="Fields\DelimitedRecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Options\FixedRecordOptions.cs">
+    <Compile Include="Fields\FixedRecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Options\RecordOptions.cs">
+    <Compile Include="Fields\RecordOptions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Events\ProgressEventArgs.cs">

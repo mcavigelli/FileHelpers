@@ -9,7 +9,6 @@ using FileHelpers.Converters;
 using FileHelpers.Core;
 using FileHelpers.Engines;
 using FileHelpers.ErrorHandling;
-using FileHelpers.Options;
 
 namespace FileHelpers.Fields
 {

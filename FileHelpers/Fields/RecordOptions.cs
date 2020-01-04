@@ -1,15 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.Fields;
 
-namespace FileHelpers.Options
+namespace FileHelpers.Fields
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// This class allows you to set some options of the records at runtime.
     /// With these options the library is now more flexible than ever.

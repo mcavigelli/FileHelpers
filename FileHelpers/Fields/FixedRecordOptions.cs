@@ -1,10 +1,12 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.Engines;
-using FileHelpers.Fields;
 
-namespace FileHelpers.Options
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// This class allows you to set some options of the fixed length records

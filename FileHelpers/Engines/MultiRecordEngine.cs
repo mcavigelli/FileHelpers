@@ -8,7 +8,7 @@ using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
-using FileHelpers.Options;
+using FileHelpers.Fields;
 using FileHelpers.Streams;
 
 namespace FileHelpers.Engines
