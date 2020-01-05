@@ -2,9 +2,8 @@ using System;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using FileHelpers.Core;
-using FileHelpers.Fields;
 
-namespace FileHelpers.Engines
+namespace FileHelpers.Fields
 {
     /// <summary>
     /// Record information,  whether it is delimited or other details
@@ -108,7 +107,7 @@ namespace FileHelpers.Engines
         /// <summary>
         /// Cache of routines to handle various operations on the record
         /// </summary>
-        RecordOperations Operations { get; }
+        IRecordOperations Operations { get; }
 
         void RemoveField(string fieldname);
     }

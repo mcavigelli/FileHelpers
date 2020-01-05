@@ -104,6 +104,8 @@
     </Compile>
     <Compile Include="Core\ComparerCache.cs" />
     <Compile Include="Core\IForwardReader.cs" />
+    <Compile Include="Fields\FieldBaseCollection.cs" />
+    <Compile Include="Fields\IRecordOptions.cs" />
     <Compile Include="Fields\BadFieldUsageException.cs" />
     <Compile Include="Core\BadUsageException.cs" />
     <Compile Include="Attributes\ConditionalRecordAttribute.cs">
@@ -223,10 +225,8 @@
     </Compile>
     <Compile Include="Engines\INotifyRead.cs" />
     <Compile Include="Engines\INotifyWrite.cs" />
-    <Compile Include="Engines\IRecordInfo.cs" />
-    <Compile Include="Engines\MultiRecordEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Fields\IRecordInfo.cs" />
+    <Compile Include="Fields\IRecordOperations.cs" />
     <Compile Include="Engines\RecordOperations.cs" />
     <Compile Include="Core\AlignMode.cs">
       <SubType>Code</SubType>

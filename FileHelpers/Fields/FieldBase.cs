@@ -7,7 +7,6 @@ using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Converters;
 using FileHelpers.Core;
-using FileHelpers.Engines;
 
 namespace FileHelpers.Fields
 {
@@ -376,7 +375,7 @@ namespace FileHelpers.Fields
             return res;
         }
 
-        internal RecordOptions Parent { private get; set; }
+        internal IRecordOptions Parent { private get; set; }
         internal int ParentIndex { private get; set; }
 
         internal static string AutoPropertyName(FieldInfo fi)

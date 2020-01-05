@@ -295,7 +295,7 @@ namespace FileHelpers.Engines
 
                         bool skip = false;
 
-                        mLastRecord = (T)RecordInfo.Operations.CreateRecordHandler();
+                        mLastRecord = (T)RecordInfo.Operations.CreateRecord();
                         if (MustNotifyProgress) // Avoid object creation
                         {
                             OnProgress(new ProgressEventArgs(mCurrentRecord,

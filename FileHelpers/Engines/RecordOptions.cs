@@ -13,7 +13,7 @@ namespace FileHelpers.Engines
     /// With these options the library is now more flexible than ever.
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Advanced)]
-    public abstract class RecordOptions
+    public abstract class RecordOptions : IRecordOptions
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         internal IRecordInfo mRecordInfo;
@@ -292,13 +292,5 @@ namespace FileHelpers.Engines
         {
             return mRecordInfo.Operations.RecordToValues(record);
         }
-    }
-
-    /// <summary>An amount of <seealso cref="FieldBase"/>.</summary>
-    public sealed class FieldBaseCollection
-        : List<FieldBase>
-    {
-        internal FieldBaseCollection(FieldBase[] fields)
-            : base(fields) {}
     }
 }

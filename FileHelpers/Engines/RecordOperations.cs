@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 using System.Text;
 using FileHelpers.Converters;
 using FileHelpers.Core;
+using FileHelpers.Fields;
 
 namespace FileHelpers.Engines
 {
     /// <summary>
     /// Collection of operations that we perform on a type, cached for reuse
     /// </summary>
-    internal sealed class RecordOperations
+    internal sealed class RecordOperations : IRecordOperations
     {
         /// <summary>
         /// Record Info we use to parse the record and generate an object instance
@@ -256,6 +256,11 @@ namespace FileHelpers.Engines
             return RecordsToDataTable(records, -1);
         }
 
+        public object CreateRecord()
+        {
+            return CreateRecordHandler();
+        }
+
         /// <summary>
         /// Create a data table containing at most maxRecords (-1 is unlimitted)
         /// </summary>
@@ -366,7 +371,7 @@ namespace FileHelpers.Engines
         /// <summary>
         /// Create an instance of the object function
         /// </summary>
-        internal CreateObjectDelegate CreateRecordHandler
+        private CreateObjectDelegate CreateRecordHandler
         {
             get
             {
@@ -396,7 +401,7 @@ namespace FileHelpers.Engines
         /// </summary>
         /// <param name="ri">Record layout instance</param>
         /// <returns>Copy of the handlers class is using</returns>
-        public RecordOperations Clone(RecordInfo ri)
+        public IRecordOperations Clone(IRecordInfo ri)
         {
             var res = new RecordOperations(ri)
             {
