@@ -275,7 +275,7 @@
     <Compile Include="Fields\ExHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engines\StreamHelper.cs">
+    <Compile Include="Streams\StreamHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engines\StringHelper.cs">

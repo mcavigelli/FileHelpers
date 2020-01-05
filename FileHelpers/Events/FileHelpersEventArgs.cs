@@ -1,5 +1,4 @@
 ﻿using System;
-using FileHelpers.Engines;
 
 namespace FileHelpers.Events
 {
@@ -11,16 +10,11 @@ namespace FileHelpers.Events
         /// <summary>
         /// Define an event message for an engine
         /// </summary>
-        /// <param name="engine">Engine type</param>
         /// <param name="lineNumber">Line number error occurred</param>
-        protected FileHelpersEventArgs(EngineBase engine, int lineNumber)
+        protected FileHelpersEventArgs(int lineNumber)
         {
-            Engine = engine;
             LineNumber = lineNumber;
         }
-
-        /// <summary> The engine that raise the event </summary>
-        public EngineBase Engine { get; set; }
 
         /// <summary>The current line number.</summary>
         public int LineNumber { get; private set; }

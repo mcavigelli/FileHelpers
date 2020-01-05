@@ -1,5 +1,3 @@
-using FileHelpers.Engines;
-
 namespace FileHelpers.Events
 {
     /// <summary>Arguments for the <see cref="AfterWriteEventArgs{T}"/></summary>
@@ -9,11 +7,10 @@ namespace FileHelpers.Events
         /// <summary>
         /// Record parsed after engine has finished
         /// </summary>
-        /// <param name="engine">engine that created the record</param>
         /// <param name="lineNumber">Record number of the record</param>
         /// <param name="line">LIne to be written</param>
-        internal AfterWriteEventArgs(EngineBase engine, int lineNumber, string line)
-            : base(engine, lineNumber)
+        internal AfterWriteEventArgs(int lineNumber, string line)
+            : base(lineNumber)
         {
             RecordLine = line;
         }
@@ -34,12 +31,11 @@ namespace FileHelpers.Events
         /// <summary>
         /// Record parsed after engine has finished
         /// </summary>
-        /// <param name="engine">engine that created the record</param>
         /// <param name="record">object created</param>
         /// <param name="lineNumber">Record number of the record</param>
         /// <param name="line">LIne to be written</param>
-        internal AfterWriteEventArgs(EngineBase engine, T record, int lineNumber, string line)
-            : base(engine, lineNumber, line)
+        internal AfterWriteEventArgs(T record, int lineNumber, string line)
+            : base(lineNumber, line)
         {
             Record = record;
         }

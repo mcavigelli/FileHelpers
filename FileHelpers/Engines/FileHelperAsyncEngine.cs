@@ -306,7 +306,7 @@ namespace FileHelpers.Engines
                         BeforeReadEventArgs<T> e = null;
                         if (MustNotifyRead) // Avoid object creation
                         {
-                            e = new BeforeReadEventArgs<T>(this, mLastRecord, currentLine, LineNumber);
+                            e = new BeforeReadEventArgs<T>(mLastRecord, currentLine, LineNumber);
                             skip = OnBeforeReadRecord(e);
                             if (e.RecordLineChanged)
                                 line.ReLoad(e.RecordLine);

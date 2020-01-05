@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using FileHelpers.Engines;
 
 namespace FileHelpers.Events
 {
@@ -16,11 +15,10 @@ namespace FileHelpers.Events
         /// <summary>
         /// Create a read event argument, contains line number and record read
         /// </summary>
-        /// <param name="engine">Engine used to parse data</param>
         /// <param name="line">record to be analysed</param>
         /// <param name="lineNumber">record count read</param>
-        internal ReadEventArgs(EngineBase engine, string line, int lineNumber)
-            : base(engine, lineNumber)
+        internal ReadEventArgs(string line, int lineNumber)
+            : base(lineNumber)
         {
             RecordLineChanged = false;
             mRecordLine = line;

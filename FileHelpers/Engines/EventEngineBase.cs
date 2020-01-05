@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text;
-using FileHelpers.Core;
 using FileHelpers.Events;
 
 namespace FileHelpers.Engines
@@ -99,7 +98,7 @@ namespace FileHelpers.Engines
                 ((INotifyRead)e.Record).BeforeRead(e);
 
             if (BeforeReadRecord != null)
-                BeforeReadRecord(this, e);
+                BeforeReadRecord(e);
 
             return e.SkipThisRecord;
         }
@@ -114,13 +113,13 @@ namespace FileHelpers.Engines
         /// <returns>true if record to be skipped</returns>
         protected bool OnAfterReadRecord(string line, T record, bool lineChanged, int lineNumber)
         {
-            var e = new AfterReadEventArgs<T>(this, line, lineChanged, record, lineNumber);
+            var e = new AfterReadEventArgs<T>(line, lineChanged, record, lineNumber);
 
             if (RecordInfo.NotifyRead)
                 ((INotifyRead) record).AfterRead(e);
 
             if (AfterReadRecord != null)
-                AfterReadRecord(this, e);
+                AfterReadRecord(e);
 
             return e.SkipThisRecord;
         }
@@ -134,13 +133,13 @@ namespace FileHelpers.Engines
         /// <returns>true if record is to be dropped</returns>
         protected bool OnBeforeWriteRecord(T record, int lineNumber)
         {
-            var e = new BeforeWriteEventArgs<T>(this, record, lineNumber);
+            var e = new BeforeWriteEventArgs<T>(record, lineNumber);
 
             if (RecordInfo.NotifyWrite)
                 ((INotifyWrite) record).BeforeWrite(e);
 
             if (BeforeWriteRecord != null)
-                BeforeWriteRecord(this, e);
+                BeforeWriteRecord(e);
 
             return e.SkipThisRecord;
         }
@@ -153,13 +152,13 @@ namespace FileHelpers.Engines
         /// <returns>Record to be written</returns>
         protected string OnAfterWriteRecord(string line, T record)
         {
-            var e = new AfterWriteEventArgs<T>(this, record, LineNumber, line);
+            var e = new AfterWriteEventArgs<T>(record, LineNumber, line);
 
             if (RecordInfo.NotifyWrite)
                 ((INotifyWrite) record).AfterWrite(e);
 
             if (AfterWriteRecord != null)
-                AfterWriteRecord.Invoke(this, e);
+                AfterWriteRecord.Invoke(e);
 
             return e.RecordLine;
         }

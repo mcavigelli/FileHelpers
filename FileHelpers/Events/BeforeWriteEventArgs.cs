@@ -1,6 +1,4 @@
-﻿using FileHelpers.Engines;
-
-namespace FileHelpers.Events
+﻿namespace FileHelpers.Events
 {
 
     /// <summary>Arguments for the <see cref="BeforeWriteHandler{T}"/></summary>
@@ -10,10 +8,9 @@ namespace FileHelpers.Events
         /// <summary>
         /// Check record just before processing.
         /// </summary>
-        /// <param name="engine">Engine that will parse record</param>
         /// <param name="lineNumber">line number to be parsed</param>
-        internal BeforeWriteEventArgs(EngineBase engine, int lineNumber)
-            : base(engine, lineNumber)
+        internal BeforeWriteEventArgs(int lineNumber)
+            : base(lineNumber)
         {
             SkipThisRecord = false;
         }
@@ -31,11 +28,10 @@ namespace FileHelpers.Events
         /// <summary>
         /// Check record just before processing.
         /// </summary>
-        /// <param name="engine">Engine that will parse record</param>
         /// <param name="record">object to be created</param>
         /// <param name="lineNumber">line number to be parsed</param>
-        internal BeforeWriteEventArgs(EngineBase engine, T record, int lineNumber)
-            : base(engine, lineNumber)
+        internal BeforeWriteEventArgs(T record, int lineNumber)
+            : base(lineNumber)
         {
             Record = record;
         }

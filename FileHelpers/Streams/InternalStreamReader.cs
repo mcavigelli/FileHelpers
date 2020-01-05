@@ -32,7 +32,7 @@ namespace FileHelpers.Streams
         private Stream mStream;
 
         /// <summary>
-        /// Create stream reader to be initialised later
+        /// Create stream reader to be initialized later
         /// </summary>
         internal InternalStreamReader() {}
 

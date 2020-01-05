@@ -241,7 +241,7 @@ namespace FileHelpers.Engines
                         BeforeReadEventArgs<T> e = null;
                         if (MustNotifyRead)
                         {
-                            e = new BeforeReadEventArgs<T>(this, record, currentLine, LineNumber);
+                            e = new BeforeReadEventArgs<T>(record, currentLine, LineNumber);
                             skip = OnBeforeReadRecord(e);
                             if (e.RecordLineChanged)
                                 line.ReLoad(e.RecordLine);

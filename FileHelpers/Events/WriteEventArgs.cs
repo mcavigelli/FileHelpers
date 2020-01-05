@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using FileHelpers.Engines;
 
 namespace FileHelpers.Events
 {
@@ -11,10 +10,9 @@ namespace FileHelpers.Events
         /// <summary>
         /// Write events are based on this
         /// </summary>
-        /// <param name="engine">Engine parsing data</param>
         /// <param name="lineNumber">Record number</param>
-        internal WriteEventArgs(EngineBase engine, int lineNumber)
-            : base(engine, lineNumber)
+        internal WriteEventArgs(int lineNumber)
+            : base(lineNumber)
         {
         }
 
