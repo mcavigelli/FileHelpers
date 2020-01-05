@@ -3,9 +3,8 @@ using System.Diagnostics;
 using FileHelpers.Attributes;
 using FileHelpers.Converters;
 using FileHelpers.Core;
-using FileHelpers.Engines;
 
-namespace FileHelpers.ErrorHandling
+namespace FileHelpers.Engines
 {
     /// <summary>
     /// Contains error information of the <see cref="FileHelperEngine"/> class.

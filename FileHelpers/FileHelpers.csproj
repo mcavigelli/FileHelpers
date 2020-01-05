@@ -237,10 +237,10 @@
     <Compile Include="Core\FixedMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ErrorHandling\ErrorInfo.cs">
+    <Compile Include="Engines\ErrorInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ErrorHandling\ErrorManager.cs">
+    <Compile Include="Engines\ErrorManager.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Fields\NullValueNotFoundException.cs" />

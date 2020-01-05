@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Fields;
 

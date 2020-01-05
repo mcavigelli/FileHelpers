@@ -5,7 +5,6 @@ using System.IO;
 using System.Text;
 using FileHelpers.Attributes;
 using FileHelpers.Core;
-using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Fields;
 
@@ -226,7 +225,7 @@ namespace FileHelpers.Engines
         ///   You can find complete information about the errors encountered while processing.
         ///   For example, you can get the errors, their number and save them to a file, etc.
         ///   </remarks>
-        ///   <seealso cref="ErrorHandling.ErrorManager"/>
+        ///   <seealso cref="Engines.ErrorManager"/>
         public ErrorManager ErrorManager
         {
             get { return mErrorManager; }
@@ -234,7 +233,7 @@ namespace FileHelpers.Engines
 
         /// <summary>
         /// Indicates the behavior of the engine when it finds an error.
-        /// {Shortcut for <seealso cref="ErrorHandling.ErrorManager.ErrorMode"/>)
+        /// {Shortcut for <seealso cref="Engines.ErrorManager.ErrorMode"/>)
         /// </summary>
         public ErrorMode ErrorMode
         {

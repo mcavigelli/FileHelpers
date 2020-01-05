@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using FileHelpers.Core;
-using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 using FileHelpers.Streams;
 

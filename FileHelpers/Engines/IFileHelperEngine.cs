@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
-using FileHelpers.ErrorHandling;
 using FileHelpers.Events;
 
 namespace FileHelpers.Engines
