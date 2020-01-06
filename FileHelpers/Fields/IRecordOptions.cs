@@ -1,5 +1,3 @@
-using FileHelpers.Engines;
-
 namespace FileHelpers.Fields
 {
     internal interface IRecordOptions

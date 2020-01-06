@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using FileHelpers.Attributes;
 using FileHelpers.Core;
 using FileHelpers.Events;
 using FileHelpers.Fields;
