@@ -1,18 +1,17 @@
 ﻿using FileHelpers;
 using FileHelpers.ExcelNPOIStorage;
+using NUnit.Framework;
 
 namespace ExamplesFx
 {
     //-> Name: Create excel storage and save it.
-    //-> Runnable: true
     //-> Description: Shows how to create excel storage, fill it with object data and save
-
-    public class ExcelCreateAndSave : ExampleBase
+    [TestFixture]
+    public class ExcelCreateAndSave
     {
-        public override void Run()
+        [Test]
+        public void Run()
         {
-            //-> File: ExcelExample.cs
-
             // Create an excel storage for specific class
             // By default start row/column is 2/B (index 1)
             var storage = new ExcelNPOIStorage(typeof(Student));
@@ -28,9 +27,8 @@ namespace ExamplesFx
             storage.ColumnsHeaders.Add("Course name");
 
             // Test data
-            var count = 3;
-            var students = new Student[count];
-
+            const int Count = 3;
+            var students = new Student[Count];
             students[0] = CreateStudent(0, "Chuck Norris", "Karate");
             students[1] = CreateStudent(1, "Steven Seagal", "Aikido");
             students[2] = CreateStudent(2, "Dennis Ritchie", "Programming");
@@ -38,17 +36,8 @@ namespace ExamplesFx
             // Insert students to excel storage
             // This method will save out excel file
             storage.InsertRecords(students);
-
-            //-> /File
         }
-        //-> /File
 
-
-        //-> File: CreateStudent.cs
-        /// <summary>
-        ///     Create new student
-        /// </summary>
-        /// <returns>Student object</returns>
         private static Student CreateStudent(int studentNumber, string fullName, string course)
         {
             return new Student
@@ -59,8 +48,6 @@ namespace ExamplesFx
             };
         }
 
-
-        //-> File: Student.cs
         [DelimitedRecord("")]
         public class Student
         {
@@ -70,7 +57,5 @@ namespace ExamplesFx
 
             public string Course { get; set; }
         }
-
-        //-> /File
     }
 }

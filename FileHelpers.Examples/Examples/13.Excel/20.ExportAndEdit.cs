@@ -1,19 +1,18 @@
 ﻿using System;
 using FileHelpers;
 using FileHelpers.ExcelNPOIStorage;
+using NUnit.Framework;
 
 namespace ExamplesFx
 {
     //-> Name: Open excel file, edit and save it
-    //-> Runnable: true
     //-> Description: Shows how to load excel file to storage, edit it and save again
-
-    public class ExportAndEdit : ExampleBase
+    [TestFixture]
+    public class ExportAndEdit
     {
-        public override void Run()
+        [Test]
+        public void Run()
         {
-            //-> File: ExcelExample.cs
-
             // Create an excel storage for specific class
             // startRow = 2 & startColumn = 1 -> for skipping column header names
             var storage = new ExcelNPOIStorage(typeof(Student), 2, 1);
@@ -42,12 +41,8 @@ namespace ExamplesFx
             // This method will save out excel file
             storage.InsertRecords(students);
             Console.WriteLine(Environment.NewLine + "Changes saved.");
-
-            //-> /File
         }
 
-
-        //-> File: Student.cs
         [DelimitedRecord("")]
         public class Student
         {
@@ -62,7 +57,5 @@ namespace ExamplesFx
                 return $"{StudentNumber}: {FullName} is on course: {Course}";
             }
         }
-
-        //-> /File
     }
 }
