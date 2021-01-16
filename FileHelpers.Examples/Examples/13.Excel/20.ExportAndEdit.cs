@@ -3,7 +3,7 @@ using FileHelpers;
 using FileHelpers.ExcelNPOIStorage;
 using NUnit.Framework;
 
-namespace ExamplesFx
+namespace Examples
 {
     //-> Name: Open excel file, edit and save it
     //-> Description: Shows how to load excel file to storage, edit it and save again

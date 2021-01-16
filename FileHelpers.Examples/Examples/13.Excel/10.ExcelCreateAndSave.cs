@@ -2,7 +2,7 @@
 using FileHelpers.ExcelNPOIStorage;
 using NUnit.Framework;
 
-namespace ExamplesFx
+namespace Examples
 {
     //-> Name: Create excel storage and save it.
     //-> Description: Shows how to create excel storage, fill it with object data and save
