@@ -7,8 +7,7 @@ namespace ExamplesFx
     //-> Runnable: true
     //-> Description: Shows how to create excel storage, fill it with object data and save
 
-    public class ExcelCreateAndSave :
-    ExampleBase
+    public class ExcelCreateAndSave : ExampleBase
     {
         public override void Run()
         {
@@ -16,7 +15,7 @@ namespace ExamplesFx
 
             // Create an excel storage for specific class
             // By default start row/column is 2/B (index 1)
-            ExcelNPOIStorage storage = new ExcelNPOIStorage(typeof(Student));
+            var storage = new ExcelNPOIStorage(typeof(Student));
 
             // Set storage file name -> that will be excel output file name
             // Extension must be .xlsx or .xls
@@ -29,8 +28,8 @@ namespace ExamplesFx
             storage.ColumnsHeaders.Add("Course name");
 
             // Test data
-            int count = 3;
-            Student[] students = new Student[count];
+            var count = 3;
+            var students = new Student[count];
 
             students[0] = CreateStudent(0, "Chuck Norris", "Karate");
             students[1] = CreateStudent(1, "Steven Seagal", "Aikido");
@@ -41,6 +40,23 @@ namespace ExamplesFx
             storage.InsertRecords(students);
 
             //-> /File
+        }
+        //-> /File
+
+
+        //-> File: CreateStudent.cs
+        /// <summary>
+        ///     Create new student
+        /// </summary>
+        /// <returns>Student object</returns>
+        private static Student CreateStudent(int studentNumber, string fullName, string course)
+        {
+            return new Student
+            {
+                StudentNumber = studentNumber,
+                FullName = fullName,
+                Course = course
+            };
         }
 
 
@@ -54,21 +70,7 @@ namespace ExamplesFx
 
             public string Course { get; set; }
         }
-        //-> /File
 
-        
-        //-> File: CreateStudent.cs
-        /// <summary>
-        /// Create new student
-        /// </summary>
-        /// <returns>Student object</returns>
-        private static Student CreateStudent(int studentNumber, string fullName, string course)
-            => new Student()
-            {
-                StudentNumber = studentNumber,
-                FullName = fullName,
-                Course = course
-            };
         //-> /File
     }
 }

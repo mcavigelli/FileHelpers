@@ -1,6 +1,6 @@
-﻿using FileHelpers;
+﻿using System;
+using FileHelpers;
 using FileHelpers.ExcelNPOIStorage;
-using System;
 
 namespace ExamplesFx
 {
@@ -8,8 +8,7 @@ namespace ExamplesFx
     //-> Runnable: true
     //-> Description: Shows how to load excel file to storage, edit it and save again
 
-    public class ExportAndEdit :
-    ExampleBase
+    public class ExportAndEdit : ExampleBase
     {
         public override void Run()
         {
@@ -17,19 +16,17 @@ namespace ExamplesFx
 
             // Create an excel storage for specific class
             // startRow = 2 & startColumn = 1 -> for skipping column header names
-            ExcelNPOIStorage storage = new ExcelNPOIStorage(typeof(Student), 2, 1);
+            var storage = new ExcelNPOIStorage(typeof(Student), 2, 1);
 
             // Set storage file name -> represents the excel file name we want to read
             storage.FileName = "Students.xlsx";
 
             // Read from excel file
-            Student[] students = storage.ExtractRecords() as Student[];
+            var students = storage.ExtractRecords() as Student[];
 
             Console.WriteLine("\t\tStudents from file:");
-            foreach (Student s in students)
-            {
+            foreach (var s in students)
                 Console.WriteLine(s);
-            }
 
             // Make some changes
             students[0].StudentNumber = 420;
@@ -38,10 +35,8 @@ namespace ExamplesFx
             Console.WriteLine("Student {0} edited.", students[1].FullName);
 
             Console.WriteLine(Environment.NewLine + "\t\tEdited students:");
-            foreach (Student s in students)
-            {
+            foreach (var s in students)
                 Console.WriteLine(s);
-            }
 
             // Insert students to excel storage
             // This method will save out excel file
@@ -67,6 +62,7 @@ namespace ExamplesFx
                 return $"{StudentNumber}: {FullName} is on course: {Course}";
             }
         }
+
         //-> /File
     }
 }
